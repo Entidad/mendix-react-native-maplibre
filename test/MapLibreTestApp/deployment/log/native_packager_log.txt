@@ -26,7 +26,6 @@ C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\win-arm64\node.exe C:\
 [Error] metro-file-map: Watchman crawl failed. Retrying once with node crawler.
 [Error]   Usually this happens when watchman isn't running. Create an empty `.watchmanconfig` file in your project's root folder or initialize a git or hg repository in your project.
 [Error]   Error: Watchman error: query failed: synchronization failed: root dir was removed or is inaccessible. Make sure watchman is running for this project. See https://facebook.github.io/watchman/docs/troubleshooting.
-[Output] Failed to write cache to disk at  C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\tmp\native\metro-file-map-a50bd06f470ac98bf809e6f2ddd1cc91-9ca9beaafa1149bc628141058b121ccd
 [Output]  INFO  Dev server ready. Press Ctrl+C to exit.
 [Output]  INFO  Key commands available:
 
@@ -35,22 +34,21 @@ C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\win-arm64\node.exe C:\
 [Output]    j  - open DevTools
 
 [Output] MxTerminalReporter: {"event":"bundle_build_started"}
-[Output] transform[stderr]: (node:9036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output] transform[stderr]: (node:8932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output] transform[stderr]: (node:12300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output] transform[stderr]: (node:7784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:4760) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
 [Output]  BUNDLE  ./index.js 
 
 [Output] MxTerminalReporter: {"event":"bundle_build_done"}
 [Output] MxTerminalReporter: {"event":"bundle_build_started"}
+[Output] transform[stderr]: (node:11708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+[Output] transform[stderr]: (node:5400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
 [Output]  BUNDLE  ./index.js 
 
 [Output] MxTerminalReporter: {"event":"bundle_build_done"}
-[Output] MxTerminalReporter: {"event":"bundle_build_started"}
-[Output]  BUNDLE  ./index.js 
+[Output]  INFO  
+[Output] [7m [1mðŸ’¡ JavaScript logs have moved![22m They can now be viewed in React Native DevTools. Tip: Type [1mj[22m in the terminal to open (requires Google Chrome or Microsoft Edge).[27m
 
-[Output] MxTerminalReporter: {"event":"bundle_build_done"}

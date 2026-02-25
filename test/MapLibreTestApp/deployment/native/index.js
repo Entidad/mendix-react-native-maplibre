@@ -266,7 +266,7 @@ startApp({
         NativeUI.registerPage("NativeMobile.MapLibre_Test", ()=> require("C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/pages/NativeMobile.MapLibre_Test"), {"sidebar":false,"headerRegionName":"placeholder$Header","showBottomBar":true,"type":"Default"});
     },
     "animationEnabled": true,
-    "deploymentID": "639076104174218037",
+    "deploymentID": "639076154669603916",
     "checkForOTAUpdates": false,
     "loggingEnabled": false,
     "encryptionDbEnabled": false,

@@ -4,13 +4,13 @@ C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\win-arm64\node.exe C:\
 
 
 [Output] Failed to write cache to disk at  C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\tmp\native\ios\metro-file-map-a50bd06f470ac98bf809e6f2ddd1cc91-9ca9beaafa1149bc628141058b121ccd
-[Output] transform[stderr]: (node:3428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:13380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output] transform[stderr]: (node:13860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:3372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output] transform[stderr]: (node:7192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:11304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output] transform[stderr]: (node:12344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:13980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
 [Output] Writing bundle output to: C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\bundle\iOS\index.ios.bundle
 [Output] Done writing bundle output

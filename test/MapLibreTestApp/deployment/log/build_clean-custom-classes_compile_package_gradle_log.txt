@@ -2,7 +2,7 @@ Initialized native services in: C:\Users\jorge\.gradle\native
 Initialized jansi services in: C:\Users\jorge\.gradle\native
 Received JVM installation metadata from 'C:\Program Files\Eclipse Adoptium\jdk-21.0.5.11-hotspot': {JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-21.0.5.11-hotspot, JAVA_VERSION=21.0.5, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.5+11-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.5+11-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=aarch64}
 The client will now receive all logging from the daemon (pid: 10928). The daemon log file: C:\Users\jorge\.gradle\daemon\8.5\daemon-10928.out.log
-Starting 10th build in daemon [uptime: 2 hrs 30 mins 35.106 secs, performance: 94%, GC rate: 0.00/s, heap usage: 1% of 512 MiB, non-heap usage: 19% of 384 MiB]
+Starting 23rd build in daemon [uptime: 3 hrs 54 mins 47.56 secs, performance: 94%, GC rate: 0.00/s, heap usage: 1% of 512 MiB, non-heap usage: 19% of 384 MiB]
 Using 6 worker leases.
 Watching the file system is configured to be enabled if available
 File system watching is inactive
@@ -23,18 +23,18 @@ Selected primary task 'compile' from project :
 Selected primary task 'package' from project :
 Tasks to be executed: [task ':clean-custom-classes', task ':compile', task ':package']
 Tasks that were excluded: []
-Resolve mutations for :clean-custom-classes (Thread[#244,Execution worker,5,main]) started.
-:clean-custom-classes (Thread[#244,Execution worker,5,main]) started.
-destroyer locations for task group 0 (Thread[#245,Execution worker Thread 2,5,main]) started.
-destroyer locations for task group 1 (Thread[#245,Execution worker Thread 2,5,main]) started.
+Resolve mutations for :clean-custom-classes (Thread[#523,Execution worker Thread 2,5,main]) started.
+:clean-custom-classes (Thread[#521,included builds,5,main]) started.
+destroyer locations for task group 0 (Thread[#523,Execution worker Thread 2,5,main]) started.
+destroyer locations for task group 1 (Thread[#525,Execution worker Thread 4,5,main]) started.
 
 > Task :clean-custom-classes
 Caching disabled for task ':clean-custom-classes' because:
   Build cache is disabled
 Task ':clean-custom-classes' is not up-to-date because:
   Task has not declared any outputs despite executing actions.
-Resolve mutations for :compile (Thread[#244,Execution worker,5,main]) started.
-:compile (Thread[#244,Execution worker,5,main]) started.
+Resolve mutations for :compile (Thread[#521,included builds,5,main]) started.
+:compile (Thread[#521,included builds,5,main]) started.
 
 > Task :compile
 Caching disabled for task ':compile' because:
@@ -56,10 +56,10 @@ file or directory 'C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\M
 Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
 Compiling with toolchain 'C:\Program Files\Eclipse Adoptium\jdk-21.0.5.11-hotspot'.
 Compiling with JDK Java compiler API.
-Class dependency analysis for incremental compilation took 0.033 secs.
-Created classpath snapshot for incremental compilation in 0.002 secs.
-Resolve mutations for :package (Thread[#244,Execution worker,5,main]) started.
-:package (Thread[#244,Execution worker,5,main]) started.
+Class dependency analysis for incremental compilation took 0.039 secs.
+Created classpath snapshot for incremental compilation in 0.004 secs.
+Resolve mutations for :package (Thread[#521,included builds,5,main]) started.
+:package (Thread[#521,included builds,5,main]) started.
 
 > Task :package UP-TO-DATE
 Caching disabled for task ':package' because:

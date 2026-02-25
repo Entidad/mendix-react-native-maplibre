@@ -16,21 +16,21 @@ import * as styles from "../styles.js";
 const { $DataView, $entidad_io_native_maplibre_MapLibre } = asPluginWidgets({ DataView, entidad_io_native_maplibre_MapLibre });
 
 const placeholder$Main = () => [
-    <$DataView key="p3.NativeMobile.MapLibre_Test.dataView1"
-        $widgetId="p3.NativeMobile.MapLibre_Test.dataView1"
+    <$DataView key="p5.NativeMobile.MapLibre_Test.dataView1"
+        $widgetId="p5.NativeMobile.MapLibre_Test.dataView1"
         style={NativeStyleProperty({
             "styles": [ styles.DataView ]
         })}
         object={AssociationObjectProperty({
-            "dataSourceId": "p3.2",
+            "dataSourceId": "p5.2",
             "scope": "$MapLibre",
             "editable": true
         })}
         content={[
-            <$entidad_io_native_maplibre_MapLibre key="p3.NativeMobile.MapLibre_Test.mapLibre1"
-                $widgetId="p3.NativeMobile.MapLibre_Test.mapLibre1"
+            <$entidad_io_native_maplibre_MapLibre key="p5.NativeMobile.MapLibre_Test.mapLibre1"
+                $widgetId="p5.NativeMobile.MapLibre_Test.mapLibre1"
                 value={AttributeProperty({
-                    "scope": "p3.NativeMobile.MapLibre_Test.dataView1",
+                    "scope": "p5.NativeMobile.MapLibre_Test.dataView1",
                     "path": "",
                     "entity": "NativeMobile.MapLibre",
                     "attribute": "Value",

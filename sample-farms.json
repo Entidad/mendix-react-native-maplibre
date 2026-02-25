@@ -1,0 +1,14 @@
+{
+    "farms": [
+        {
+            "name": "Camarillo Farm",
+            "lat": 34.2163,
+            "lng": -119.0374
+        },
+        {
+            "name": "Oxnard Farm",
+            "lat": 34.1974,
+            "lng": -119.1770
+        }
+    ]
+}
