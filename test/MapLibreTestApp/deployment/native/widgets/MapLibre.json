@@ -1,0 +1,5 @@
+{
+  "nativeDependencies": {
+    "@maplibre/maplibre-react-native": "10.4.2"
+  }
+}

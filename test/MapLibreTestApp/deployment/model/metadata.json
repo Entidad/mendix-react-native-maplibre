@@ -1,0 +1,72 @@
+{
+  "RuntimeVersion": "10.24.13.86719",
+  "ProjectID": "a840b967-52f4-4581-b040-b898fa593539",
+  "ProjectName": "MapLibreTestApp",
+  "ModelVersion": "unversioned",
+  "Description": "",
+  "AdminUser": "MxAdmin",
+  "AdminRole": "8dd52bfa-6d7e-453b-b506-303c0a3d9567",
+  "JavaVersion": 21,
+  "Roles": {
+    "8dd52bfa-6d7e-453b-b506-303c0a3d9567": {
+      "Name": "Administrator",
+      "ManageableRoles": [
+        "8dd52bfa-6d7e-453b-b506-303c0a3d9567",
+        "53f5d6fa-6da9-4a71-b011-454ec052cce8",
+        "a177b8aa-b3cd-4a4f-9cb1-001de011c2ba"
+      ]
+    },
+    "53f5d6fa-6da9-4a71-b011-454ec052cce8": {
+      "Name": "User"
+    },
+    "a177b8aa-b3cd-4a4f-9cb1-001de011c2ba": {
+      "Name": "Anonymous"
+    }
+  },
+  "Constants": [
+    {
+      "Name": "Atlas_NativeMobile_Content.Atlas_Native_Content_Version",
+      "Type": "String",
+      "Description": "",
+      "DefaultValue": "3.0.1"
+    },
+    {
+      "Name": "FeedbackModule.ClientIdentifier",
+      "Type": "String",
+      "Description": "",
+      "DefaultValue": "Feedback Module 4.0.2"
+    },
+    {
+      "Name": "FeedbackModule.LocalStorageKey",
+      "Type": "String",
+      "Description": "",
+      "DefaultValue": "mxfeedback-form-data"
+    }
+  ],
+  "ScheduledEvents": [],
+  "Languages": [
+    "en_US"
+  ],
+  "Configuration": {
+    "SourceDatabaseType": "HSQLDB",
+    "SourceDatabaseName": "default",
+    "SourceBuiltInDatabasePath": "model/sampledata/data/database"
+  },
+  "RequestHandlers": [
+    {
+      "Name": "/api/",
+      "DefaultEnabled": true,
+      "MatchExactly": false
+    },
+    {
+      "Name": "/link/",
+      "DefaultEnabled": true,
+      "MatchExactly": false
+    },
+    {
+      "Name": "/p/",
+      "DefaultEnabled": false,
+      "MatchExactly": false
+    }
+  ]
+}

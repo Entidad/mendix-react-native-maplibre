@@ -1,0 +1,21 @@
+C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\win-arm64\node.exe C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\node_modules\react-native\cli.js bundle --config "C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\metro.config.js" --dev "false" --entry-file "C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\index.js" --platform "android" --bundle-output "C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\bundle\android\assets\index.android.bundle" --assets-dest "C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\bundle\android\res"
+[Output]                 Welcome to Metro v0.81.5
+[Output]               Fast - Scalable - Integrated
+
+
+[Output] Failed to write cache to disk at  C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\tmp\native\android\metro-file-map-a50bd06f470ac98bf809e6f2ddd1cc91-9ca9beaafa1149bc628141058b121ccd
+[Output] transform[stderr]: (node:6600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+[Output] transform[stderr]: (node:4288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+[Output] transform[stderr]: (node:4924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+[Output] transform[stderr]: (node:4772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+[Output] Writing bundle output to: C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\bundle\android\assets\index.android.bundle
+[Output] Done writing bundle output
+[Output] Copying 26 asset files
+[Output] Done copying assets
+
+
+C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\node_modules\react-native\sdks\hermesc\win64-bin\hermesc.exe --emit-binary --out "C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\bundle\android\assets\index.android.bundle" "C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\bundle\android\assets\index.android.bundle" --output-source-map --w

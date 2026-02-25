@@ -1,0 +1,274 @@
+2026-02-25T09:52:50,603: [listener] Watchman 4.9.4 <no build info set> starting up on JORGEFLORES4F71
+2026-02-25T09:52:50,655: [listener] failed to parse json from C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\tmp\watchman_state.json: unable to open C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\tmp\watchman_state.json: No such file or directory
+2026-02-25T09:52:50,678: [accept0] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,679: [accept1] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,680: [accept2] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,681: [accept3] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,683: [accept4] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,685: [accept5] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,685: [accept6] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,687: [accept7] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,688: [accept8] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,689: [accept9] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,693: [accept10] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,694: [accept11] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,694: [accept12] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,695: [accept13] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,698: [accept14] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,699: [accept15] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,701: [accept16] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,706: [accept17] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,710: [accept18] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,711: [accept19] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,712: [accept20] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,712: [accept21] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,713: [accept22] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,714: [accept23] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,715: [accept24] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,715: [accept25] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,716: [accept26] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,717: [accept27] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,720: [accept28] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,721: [accept29] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,721: [accept30] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:52:50,722: [accept31] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:53:10,087: [client=3:stm=2736786335824:pid=0] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native is on filesystem type NTFS
+2026-02-25T09:53:10,093: [client=3:stm=2736786335824:pid=0] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native using watcher mechanism win32 (auto was requested)
+2026-02-25T09:53:10,123: [io 2736775225344 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] PERF: {"start_time": 1772041990.0945129, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 6196, "elapsed_time": 0.028049999999999999}
+2026-02-25T09:53:10,123: [io 2736775225344 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] crawl complete
+2026-02-25T09:53:10,126: [client=3:stm=2736786335824:pid=0] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme is on filesystem type NTFS
+2026-02-25T09:53:10,127: [client=3:stm=2736786335824:pid=0] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme using watcher mechanism win32 (auto was requested)
+2026-02-25T09:53:10,129: [io 2736786717488 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] PERF: {"start_time": 1772041990.128231, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 6196, "elapsed_time": 0.00093800000000000003}
+2026-02-25T09:53:10,129: [io 2736786717488 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] crawl complete
+2026-02-25T09:53:10,130: [client=3:stm=2736786335824:pid=0] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource is on filesystem type NTFS
+2026-02-25T09:53:10,130: [client=3:stm=2736786335824:pid=0] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource using watcher mechanism win32 (auto was requested)
+2026-02-25T09:53:10,203: [io 2736786723664 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] PERF: {"start_time": 1772041990.1311669, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 6196, "elapsed_time": 0.072017999999999999}
+2026-02-25T09:53:10,203: [io 2736786723664 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] crawl complete
+2026-02-25T09:53:10,204: [client=3:stm=2736786335824:pid=0] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource is on filesystem type NTFS
+2026-02-25T09:53:10,205: [client=3:stm=2736786335824:pid=0] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource using watcher mechanism win32 (auto was requested)
+2026-02-25T09:53:10,214: [io 2736787352544 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] PERF: {"start_time": 1772041990.2061851, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 6196, "elapsed_time": 0.0081779999999999995}
+2026-02-25T09:53:10,214: [io 2736787352544 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] crawl complete
+2026-02-25T09:53:10,215: [client=3:stm=2736786335824:pid=0] path C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules is on filesystem type NTFS
+2026-02-25T09:53:10,215: [client=3:stm=2736786335824:pid=0] root C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2026-02-25T09:53:11,743: [io 2736808537584 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] PERF: {"start_time": 1772041990.2184989, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 6196, "elapsed_time": 1.5243709999999999}
+2026-02-25T09:53:11,743: [client=3:stm=2736786335824:pid=0] PERF: {"start_time": 1772041990.2143631, "version": "4.9.4", "description": "dispatch_command:watch-project", "meta": {"root": {"path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}, "args": ["watch-project", "C:\\Program Files\\Mendix\\10.24.13.86719\\modeler\\tools\\node\\node_modules"], "client": {"pid": 0}}, "pid": 6196, "elapsed_time": 1.529428}
+2026-02-25T09:53:11,743: [io 2736808537584 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] crawl complete
+2026-02-25T09:53:12,136: [readchange C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] signalled
+2026-02-25T09:53:12,136: [client=3:stm=2736786335824:pid=0] PERF: {"start_time": 1772041992.1346941, "version": "4.9.4", "description": "sync_to_now", "meta": {"root": {"path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}, "sync_to_now": {"success": false, "reason": "root dir was removed or is inaccessible", "timeoutms": 60000}}, "pid": 6196, "elapsed_time": 0.0020149999999999999}
+2026-02-25T09:53:12,144: [client=3:stm=2736786335824:pid=0] send_error_response: ["query", "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", {"fields": ["name", "exists", "mtime_ms", "size", "content.sha1hex", "type"], "expression": ["anyof", ["allof", ["type", "f"], ["suffix", ["native.js", "js", "jsx", "ts", "tsx", "cjs", "mjs", "json", "js_commonjs-exports", "js_commonjs-module", "bmp", "gif", "jpg", "jpeg", "png", "psd", "svg", "webp", "xml", "m4v", "mov", "mp4", "mpeg", "mpg", "webm", "aac", "aiff", "caf", "m4a", "mp3", "wav", "html", "pdf", "yaml", "yml", "otf", "ttf", "zip"]]], ["type", "l"]]}], failed: query failed: synchronization failed: root dir was removed or is inaccessible
+2026-02-25T09:53:57,540: [client=11:stm=2736831184992:pid=0] path C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules is on filesystem type NTFS
+2026-02-25T09:53:57,546: [client=11:stm=2736831184992:pid=0] root C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2026-02-25T09:53:58,397: [io 2736831994320 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] PERF: {"start_time": 1772042037.5485721, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 6196, "elapsed_time": 0.84915200000000002}
+2026-02-25T09:53:58,397: [io 2736831994320 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] crawl complete
+2026-02-25T09:57:23,228: [listener] Watchman 4.9.4 <no build info set> starting up on JORGEFLORES4F71
+2026-02-25T09:57:23,240: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native is on filesystem type NTFS
+2026-02-25T09:57:23,245: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:23,247: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme is on filesystem type NTFS
+2026-02-25T09:57:23,248: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:23,250: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource is on filesystem type NTFS
+2026-02-25T09:57:23,251: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:23,251: [io 1453764334528 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] PERF: {"start_time": 1772042243.2508259, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 13176, "elapsed_time": 0.00097000000000000005}
+2026-02-25T09:57:23,251: [io 1453764334528 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] crawl complete
+2026-02-25T09:57:23,253: [listener] path C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules is on filesystem type NTFS
+2026-02-25T09:57:23,254: [listener] root C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:23,260: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource is on filesystem type NTFS
+2026-02-25T09:57:23,261: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:23,266: [accept0] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,267: [accept1] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,268: [accept2] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,268: [accept3] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,268: [accept4] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,269: [accept5] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,269: [accept6] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,270: [accept7] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,270: [accept8] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,271: [accept9] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,271: [accept10] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,272: [accept11] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,272: [accept12] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,272: [accept13] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,274: [accept14] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,275: [accept15] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,276: [accept16] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,276: [accept17] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,277: [accept18] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,277: [io 1453763965856 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] PERF: {"start_time": 1772042243.2478349, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 13176, "elapsed_time": 0.029960000000000001}
+2026-02-25T09:57:23,277: [accept19] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,277: [io 1453763965856 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] crawl complete
+2026-02-25T09:57:23,278: [io 1453764301808 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] PERF: {"start_time": 1772042243.263797, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 13176, "elapsed_time": 0.013998}
+2026-02-25T09:57:23,278: [accept20] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,278: [io 1453764301808 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] crawl complete
+2026-02-25T09:57:23,278: [accept21] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,278: [accept22] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,279: [accept23] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,279: [accept24] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,280: [accept25] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,280: [accept26] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,280: [accept27] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,281: [accept28] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,281: [accept29] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,281: [accept30] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,282: [accept31] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:23,333: [io 1453764304544 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] PERF: {"start_time": 1772042243.2527959, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 13176, "elapsed_time": 0.080999000000000002}
+2026-02-25T09:57:23,333: [io 1453764304544 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] crawl complete
+2026-02-25T09:57:23,984: [io 1453764305456 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] PERF: {"start_time": 1772042243.259795, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 13176, "elapsed_time": 0.72500200000000004}
+2026-02-25T09:57:23,984: [io 1453764305456 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] crawl complete
+2026-02-25T09:57:56,959: [listener] Watchman 4.9.4 <no build info set> starting up on JORGEFLORES4F71
+2026-02-25T09:57:56,967: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native is on filesystem type NTFS
+2026-02-25T09:57:56,969: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:56,970: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme is on filesystem type NTFS
+2026-02-25T09:57:56,971: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:56,973: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource is on filesystem type NTFS
+2026-02-25T09:57:56,973: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:56,974: [io 2080294564368 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] PERF: {"start_time": 1772042276.9721169, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 1204, "elapsed_time": 0.0020010000000000002}
+2026-02-25T09:57:56,974: [io 2080294564368 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] crawl complete
+2026-02-25T09:57:56,975: [listener] path C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules is on filesystem type NTFS
+2026-02-25T09:57:56,976: [listener] root C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:56,977: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource is on filesystem type NTFS
+2026-02-25T09:57:56,978: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource using watcher mechanism win32 (auto was requested)
+2026-02-25T09:57:56,986: [accept0] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:56,997: [io 2080302637296 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] PERF: {"start_time": 1772042276.9821169, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 1204, "elapsed_time": 0.014999999999999999}
+2026-02-25T09:57:56,998: [accept1] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:56,998: [accept2] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,000: [io 2080302637296 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] crawl complete
+2026-02-25T09:57:57,000: [accept3] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,001: [accept4] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,001: [io 2080294420368 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] PERF: {"start_time": 1772042276.9701159, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 1204, "elapsed_time": 0.031001000000000001}
+2026-02-25T09:57:57,001: [io 2080294420368 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] crawl complete
+2026-02-25T09:57:57,001: [accept5] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,002: [accept6] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,002: [accept7] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,002: [accept8] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,003: [accept9] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,003: [accept10] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,004: [accept11] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,006: [accept12] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,006: [accept13] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,006: [accept14] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,007: [accept15] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,007: [accept16] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,008: [accept17] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,008: [accept18] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,008: [accept19] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,009: [accept20] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,009: [accept21] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,010: [accept22] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,010: [accept23] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,010: [accept24] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,011: [accept25] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,011: [accept26] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,011: [accept27] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,012: [accept28] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,012: [accept29] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,012: [accept30] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,013: [accept31] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T09:57:57,052: [io 2080294650032 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] PERF: {"start_time": 1772042276.975116, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 1204, "elapsed_time": 0.077003000000000002}
+2026-02-25T09:57:57,052: [io 2080294650032 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] crawl complete
+2026-02-25T09:57:57,588: [io 2080295088544 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] PERF: {"start_time": 1772042276.9771171, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 1204, "elapsed_time": 0.61106400000000005}
+2026-02-25T09:57:57,588: [io 2080295088544 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] crawl complete
+2026-02-25T10:00:27,986: [listener] Watchman 4.9.4 <no build info set> starting up on JORGEFLORES4F71
+2026-02-25T10:00:27,995: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native is on filesystem type NTFS
+2026-02-25T10:00:27,996: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:27,998: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme is on filesystem type NTFS
+2026-02-25T10:00:27,999: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:28,000: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource is on filesystem type NTFS
+2026-02-25T10:00:28,001: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:28,001: [io 1892527643568 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] PERF: {"start_time": 1772042428.0003819, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 14028, "elapsed_time": 0.0009990000000000001}
+2026-02-25T10:00:28,002: [io 1892527643568 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] crawl complete
+2026-02-25T10:00:28,003: [listener] path C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules is on filesystem type NTFS
+2026-02-25T10:00:28,003: [listener] root C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:28,005: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource is on filesystem type NTFS
+2026-02-25T10:00:28,006: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:28,013: [accept0] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,014: [accept1] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,015: [accept2] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,016: [accept3] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,022: [io 1892528094816 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] PERF: {"start_time": 1772042428.0083821, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 14028, "elapsed_time": 0.014}
+2026-02-25T10:00:28,022: [io 1892528094816 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] crawl complete
+2026-02-25T10:00:28,023: [accept4] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,024: [accept5] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,025: [accept6] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,025: [accept7] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,026: [accept8] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,026: [accept9] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,027: [accept10] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,027: [accept11] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,027: [accept12] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,028: [accept13] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,028: [accept14] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,029: [io 1892527417520 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] PERF: {"start_time": 1772042427.9983809, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 14028, "elapsed_time": 0.031001000000000001}
+2026-02-25T10:00:28,029: [io 1892527417520 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] crawl complete
+2026-02-25T10:00:28,029: [accept15] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,030: [accept16] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,033: [accept17] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,034: [accept18] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,034: [accept19] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,035: [accept20] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,035: [accept21] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,036: [accept22] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,036: [accept23] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,039: [accept24] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,040: [accept25] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,040: [accept26] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,041: [accept27] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,041: [accept28] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,041: [accept29] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,042: [accept30] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,042: [accept31] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:28,075: [io 1892528093904 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] PERF: {"start_time": 1772042428.003381, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 14028, "elapsed_time": 0.072000999999999996}
+2026-02-25T10:00:28,076: [io 1892528093904 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] crawl complete
+2026-02-25T10:00:28,689: [io 1892528092080 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] PERF: {"start_time": 1772042428.005383, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 14028, "elapsed_time": 0.68399900000000002}
+2026-02-25T10:00:28,689: [io 1892528092080 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] crawl complete
+2026-02-25T10:00:57,952: [listener] Watchman 4.9.4 <no build info set> starting up on JORGEFLORES4F71
+2026-02-25T10:00:57,962: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native is on filesystem type NTFS
+2026-02-25T10:00:57,964: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:57,966: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme is on filesystem type NTFS
+2026-02-25T10:00:57,967: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:57,969: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource is on filesystem type NTFS
+2026-02-25T10:00:57,970: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:57,970: [io 2972871967536 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] PERF: {"start_time": 1772042457.9693069, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 10272, "elapsed_time": 0.0013979999999999999}
+2026-02-25T10:00:57,970: [io 2972871967536 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme] crawl complete
+2026-02-25T10:00:57,971: [listener] path C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules is on filesystem type NTFS
+2026-02-25T10:00:57,972: [listener] root C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:57,975: [listener] path C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource is on filesystem type NTFS
+2026-02-25T10:00:57,976: [listener] root C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource using watcher mechanism win32 (auto was requested)
+2026-02-25T10:00:57,993: [accept0] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:57,997: [accept1] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:57,997: [io 2972879512992 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] PERF: {"start_time": 1772042457.9807031, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 10272, "elapsed_time": 0.016997000000000002}
+2026-02-25T10:00:57,998: [io 2972879512992 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource] crawl complete
+2026-02-25T10:00:57,998: [accept2] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:57,999: [accept3] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:57,999: [accept4] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:57,999: [accept5] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,000: [accept6] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,000: [accept7] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,001: [accept8] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,001: [accept9] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,002: [accept10] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,002: [accept11] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,003: [accept12] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,003: [accept13] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,004: [accept14] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,004: [accept15] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,005: [accept16] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,005: [accept17] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,005: [accept18] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,006: [accept19] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,006: [accept20] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,007: [io 2972871925456 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] PERF: {"start_time": 1772042457.9667001, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 10272, "elapsed_time": 0.040998}
+2026-02-25T10:00:58,007: [io 2972871925456 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native] crawl complete
+2026-02-25T10:00:58,007: [accept21] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,008: [accept22] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,009: [accept23] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,009: [accept24] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,010: [accept25] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,010: [accept26] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,011: [accept27] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,011: [accept28] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,012: [accept29] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,012: [accept30] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,012: [accept31] waiting for pipe clients on \\.\pipe\watchman-jorge
+2026-02-25T10:00:58,051: [io 2972872364144 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] PERF: {"start_time": 1772042457.971699, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 10272, "elapsed_time": 0.079998}
+2026-02-25T10:00:58,051: [io 2972872364144 C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource] crawl complete
+2026-02-25T10:00:58,802: [io 2972872110304 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] PERF: {"start_time": 1772042457.974699, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 10272, "elapsed_time": 0.82811999999999997}
+2026-02-25T10:00:58,802: [io 2972872110304 C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules] crawl complete

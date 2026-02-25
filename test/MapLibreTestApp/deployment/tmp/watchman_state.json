@@ -1,0 +1,25 @@
+{
+    "version": "4.9.4",
+    "watched": [
+        {
+            "triggers": [],
+            "path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native"
+        },
+        {
+            "triggers": [],
+            "path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/theme"
+        },
+        {
+            "triggers": [],
+            "path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/javascriptsource"
+        },
+        {
+            "triggers": [],
+            "path": "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules"
+        },
+        {
+            "triggers": [],
+            "path": "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/themesource"
+        }
+    ]
+}
