@@ -1,12 +1,12 @@
 {
-    "farms": [
+    "mapMarkers": [
         {
-            "name": "Camarillo Farm",
+            "name": "Camarillo",
             "lat": 34.2163,
             "lng": -119.0374
         },
         {
-            "name": "Oxnard Farm",
+            "name": "Oxnard",
             "lat": 34.1974,
             "lng": -119.1770
         }

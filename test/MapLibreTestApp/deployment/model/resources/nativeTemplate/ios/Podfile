@@ -84,6 +84,9 @@ target 'dev' do
 end
 
 post_install do |installer|
+  # Other post install hooks...
+  $MLRN.post_install(installer)
+
   config = use_native_modules!
   react_native_post_install(
     installer,

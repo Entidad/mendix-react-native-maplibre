@@ -21,33 +21,33 @@ import * as styles from "../styles.js";
 const { $Container, $DataView, $TextBox, $Text, $Button } = asPluginWidgets({ Container, DataView, TextBox, Text, Button });
 
 const placeholder$Main = () => [
-    <$Container key="p0.NativeMobile.Login.container4"
-        $widgetId="p0.NativeMobile.Login.container4"
+    <$Container key="p2.NativeMobile.Login.container4"
+        $widgetId="p2.NativeMobile.Login.container4"
         style={NativeStyleProperty({
             "styles": [ styles.Container, styles.spacingInnerTopLarger, styles.spacingInnerLeftMedium, styles.spacingInnerRightMedium, styles.spacingInnerBottomLarger ]
         })}
         content={[
-            <$DataView key="p0.NativeMobile.Login.dataView2"
-                $widgetId="p0.NativeMobile.Login.dataView2"
+            <$DataView key="p2.NativeMobile.Login.dataView2"
+                $widgetId="p2.NativeMobile.Login.dataView2"
                 style={NativeStyleProperty({
                     "styles": [ styles.DataView, styles.spacingOuterTopMedium ]
                 })}
                 object={NanoflowObjectProperty({
-                    "dataSourceId": "p0.4",
+                    "dataSourceId": "p2.4",
                     "editable": true,
                     "source": { "nanoflow": () => require("C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/nanoflows/NativeMobile.DSS_CreateLoginContext").DSS_CreateLoginContext },
                     "argMap": {}
                 })}
                 content={[
-                    <$TextBox key="p0.NativeMobile.Login.textBox3"
-                        $widgetId="p0.NativeMobile.Login.textBox3"
+                    <$TextBox key="p2.NativeMobile.Login.textBox3"
+                        $widgetId="p2.NativeMobile.Login.textBox3"
                         style={NativeStyleProperty({
                             "styles": [ styles.TextBox, styles.TextBoxHorizontal, styles.spacingOuterBottomMedium ]
                         })}
                         formOrientation={"horizontal"}
                         labelWidth={0}
                         inputValue={AttributeProperty({
-                            "scope": "p0.NativeMobile.Login.dataView2",
+                            "scope": "p2.NativeMobile.Login.dataView2",
                             "path": "",
                             "entity": "NativeMobile.Login",
                             "attribute": "Username",
@@ -67,15 +67,15 @@ const placeholder$Main = () => [
                         submitWhileEditing={false}
                         submitDelay={300}
                         accessible={false} />,
-                    <$TextBox key="p0.NativeMobile.Login.textBox4"
-                        $widgetId="p0.NativeMobile.Login.textBox4"
+                    <$TextBox key="p2.NativeMobile.Login.textBox4"
+                        $widgetId="p2.NativeMobile.Login.textBox4"
                         style={NativeStyleProperty({
                             "styles": [ styles.TextBox, styles.TextBoxHorizontal, styles.spacingOuterBottomMedium ]
                         })}
                         formOrientation={"horizontal"}
                         labelWidth={0}
                         inputValue={AttributeProperty({
-                            "scope": "p0.NativeMobile.Login.dataView2",
+                            "scope": "p2.NativeMobile.Login.dataView2",
                             "path": "",
                             "entity": "NativeMobile.Login",
                             "attribute": "Password",
@@ -95,8 +95,8 @@ const placeholder$Main = () => [
                         submitWhileEditing={false}
                         submitDelay={300}
                         accessible={false} />,
-                    <$Text key="p0.NativeMobile.Login.text6"
-                        $widgetId="p0.NativeMobile.Login.text6"
+                    <$Text key="p2.NativeMobile.Login.text6"
+                        $widgetId="p2.NativeMobile.Login.text6"
                         style={NativeStyleProperty({
                             "styles": [ styles.Text, styles.textPrimary, styles.spacingOuterBottomMedium, styles.textSmall ]
                         })}
@@ -104,8 +104,8 @@ const placeholder$Main = () => [
                             "expression": { "expr": { "type": "literal", "value": "Forgot Password?" }, "args": {} }
                         })}
                         accessible={false} />,
-                    <$Button key="p0.NativeMobile.Login.actionButton2"
-                        $widgetId="p0.NativeMobile.Login.actionButton2"
+                    <$Button key="p2.NativeMobile.Login.actionButton2"
+                        $widgetId="p2.NativeMobile.Login.actionButton2"
                         style={NativeStyleProperty({
                             "styles": [ styles.ActionButton ]
                         })}
@@ -113,17 +113,17 @@ const placeholder$Main = () => [
                             "expression": { "expr": { "type": "literal", "value": "Login" }, "args": {} }
                         })}
                         onClick={ActionProperty({
-                            "action": { "type": "callNanoflow", "argMap": { "Login": { "widget": "p0.NativeMobile.Login.dataView2", "source": "object" } }, "config": { "nanoflow": () => require("C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/nanoflows/NativeMobile.ACT_SignInUser").ACT_SignInUser }, "disabledDuringExecution": false }
+                            "action": { "type": "callNanoflow", "argMap": { "Login": { "widget": "p2.NativeMobile.Login.dataView2", "source": "object" } }, "config": { "nanoflow": () => require("C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/nanoflows/NativeMobile.ACT_SignInUser").ACT_SignInUser }, "disabledDuringExecution": false }
                         })}
                         accessible={false} />,
-                    <$Container key="p0.NativeMobile.Login.container3"
-                        $widgetId="p0.NativeMobile.Login.container3"
+                    <$Container key="p2.NativeMobile.Login.container3"
+                        $widgetId="p2.NativeMobile.Login.container3"
                         style={NativeStyleProperty({
                             "styles": [ styles.Container, styles.flexRow, styles.justifyContentCenter, styles.alignChildrenEnd, styles.spacingInnerTopMedium, styles.spacingInnerBottomMedium ]
                         })}
                         content={[
-                            <$Text key="p0.NativeMobile.Login.text4"
-                                $widgetId="p0.NativeMobile.Login.text4"
+                            <$Text key="p2.NativeMobile.Login.text4"
+                                $widgetId="p2.NativeMobile.Login.text4"
                                 style={NativeStyleProperty({
                                     "styles": [ styles.Text, styles.spacingOuterRightSmall, styles.textSmall, styles.textParagraph ]
                                 })}
@@ -131,8 +131,8 @@ const placeholder$Main = () => [
                                     "expression": { "expr": { "type": "literal", "value": "Don't have an account yet?" }, "args": {} }
                                 })}
                                 accessible={false} />,
-                            <$Text key="p0.NativeMobile.Login.text5"
-                                $widgetId="p0.NativeMobile.Login.text5"
+                            <$Text key="p2.NativeMobile.Login.text5"
+                                $widgetId="p2.NativeMobile.Login.text5"
                                 style={NativeStyleProperty({
                                     "styles": [ styles.Text, styles.textPrimary, styles.textSmall ]
                                 })}

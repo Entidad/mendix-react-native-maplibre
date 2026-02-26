@@ -9,28 +9,28 @@ import { DataView } from "mendix/widgets/native/DataView";
 import { MapLibre as entidad_io_native_maplibre_MapLibre } from "../widgets/entidad/io/native/maplibre/MapLibre";
 import { addEnumerations, asPluginWidgets, t } from "mendix/native";
 
-import { mainContent, sidebar } from "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/layouts/Atlas_Core.NativePhone_Default.js";
+import { mainContent, sidebar } from "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/layouts/Atlas_Core.NativePhone_TopBarOnly.js";
 
 import * as styles from "../styles.js";
 
 const { $DataView, $entidad_io_native_maplibre_MapLibre } = asPluginWidgets({ DataView, entidad_io_native_maplibre_MapLibre });
 
 const placeholder$Main = () => [
-    <$DataView key="p5.NativeMobile.MapLibre_Test.dataView1"
-        $widgetId="p5.NativeMobile.MapLibre_Test.dataView1"
+    <$DataView key="p6.NativeMobile.MapLibre_Test.dataView1"
+        $widgetId="p6.NativeMobile.MapLibre_Test.dataView1"
         style={NativeStyleProperty({
             "styles": [ styles.DataView ]
         })}
         object={AssociationObjectProperty({
-            "dataSourceId": "p5.2",
+            "dataSourceId": "p6.2",
             "scope": "$MapLibre",
             "editable": true
         })}
         content={[
-            <$entidad_io_native_maplibre_MapLibre key="p5.NativeMobile.MapLibre_Test.mapLibre1"
-                $widgetId="p5.NativeMobile.MapLibre_Test.mapLibre1"
+            <$entidad_io_native_maplibre_MapLibre key="p6.NativeMobile.MapLibre_Test.mapLibre1"
+                $widgetId="p6.NativeMobile.MapLibre_Test.mapLibre1"
                 value={AttributeProperty({
-                    "scope": "p5.NativeMobile.MapLibre_Test.dataView1",
+                    "scope": "p6.NativeMobile.MapLibre_Test.dataView1",
                     "path": "",
                     "entity": "NativeMobile.MapLibre",
                     "attribute": "Value",
@@ -49,7 +49,7 @@ export const $$title = t([
     "MapLibre Test"
 ]);
 
-export const $$style = [ styles.Layout, styles.Page, styles.spacingInnerTopLarger, styles.spacingInnerBottomLarger, styles.spacingInnerLeftMedium, styles.spacingInnerRightMedium, styles.backgroundPrimary ];
+export const $$style = [ styles.Layout, styles.Page, styles.backgroundPrimary ];
 
 export const $$parameters = ["MapLibre"];
 export const $$page = () => mainContent(placeholder$Main);

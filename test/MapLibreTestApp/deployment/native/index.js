@@ -263,10 +263,10 @@ startApp({
     ] ),
     "registerPages": () => {
         NativeUI.registerPage("NativeMobile.Home_Native", ()=> require("C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/pages/NativeMobile.Home_Native"), {"sidebar":false,"headerRegionName":"placeholder$Header","showBottomBar":true,"type":"Default"});
-        NativeUI.registerPage("NativeMobile.MapLibre_Test", ()=> require("C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/pages/NativeMobile.MapLibre_Test"), {"sidebar":false,"headerRegionName":"placeholder$Header","showBottomBar":true,"type":"Default"});
+        NativeUI.registerPage("NativeMobile.MapLibre_Test", ()=> require("C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/native/pages/NativeMobile.MapLibre_Test"), {"sidebar":false,"headerRegionName":"placeholder$Header","showBottomBar":false,"type":"Default"});
     },
     "animationEnabled": true,
-    "deploymentID": "639076154669603916",
+    "deploymentID": "639076953692226389",
     "checkForOTAUpdates": false,
     "loggingEnabled": false,
     "encryptionDbEnabled": false,

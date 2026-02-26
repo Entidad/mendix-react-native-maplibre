@@ -10,8 +10,8 @@ import * as styles from "../styles.js";
 const { $Placeholder } = asPluginWidgets({ Placeholder });
 
 export const mainContent = (placeholder$Main) => [
-    <$Placeholder key="l1.Atlas_Core.NativePhone_FullPage.Main"
-        $widgetId="l1.Atlas_Core.NativePhone_FullPage.Main"
+    <$Placeholder key="l5.Atlas_Core.NativePhone_FullPage.Main"
+        $widgetId="l5.Atlas_Core.NativePhone_FullPage.Main"
         content={placeholder$Main()} />
 ];
 

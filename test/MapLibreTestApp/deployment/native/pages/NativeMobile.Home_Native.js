@@ -17,20 +17,20 @@ import * as styles from "../styles.js";
 const { $Container, $Text, $Button } = asPluginWidgets({ Container, Text, Button });
 
 const placeholder$Main = () => [
-    <$Container key="p6.NativeMobile.Home_Native.container5"
-        $widgetId="p6.NativeMobile.Home_Native.container5"
+    <$Container key="p1.NativeMobile.Home_Native.container5"
+        $widgetId="p1.NativeMobile.Home_Native.container5"
         style={NativeStyleProperty({
             "styles": [ styles.Container, styles.flexMain, styles.alignChildrenCenter, styles.justifyContentCenter, styles.spacingInnerLeftMedium, styles.spacingInnerRightMedium, styles.backgroundPrimary ]
         })}
         content={[
-            <$Container key="p6.NativeMobile.Home_Native.container6"
-                $widgetId="p6.NativeMobile.Home_Native.container6"
+            <$Container key="p1.NativeMobile.Home_Native.container6"
+                $widgetId="p1.NativeMobile.Home_Native.container6"
                 style={NativeStyleProperty({
                     "styles": [ styles.Container, styles.spacingOuterBottomSmaller ]
                 })}
                 content={[
-                    <$Text key="p6.NativeMobile.Home_Native.text7"
-                        $widgetId="p6.NativeMobile.Home_Native.text7"
+                    <$Text key="p1.NativeMobile.Home_Native.text7"
+                        $widgetId="p1.NativeMobile.Home_Native.text7"
                         style={NativeStyleProperty({
                             "styles": [ styles.Text, styles.TextHeading1, styles.h1 ]
                         })}
@@ -40,14 +40,14 @@ const placeholder$Main = () => [
                         accessible={false} />
                 ]}
                 accessible={false} />,
-            <$Container key="p6.NativeMobile.Home_Native.container7"
-                $widgetId="p6.NativeMobile.Home_Native.container7"
+            <$Container key="p1.NativeMobile.Home_Native.container7"
+                $widgetId="p1.NativeMobile.Home_Native.container7"
                 style={NativeStyleProperty({
                     "styles": [ styles.Container, styles.flexRow ]
                 })}
                 content={[
-                    <$Text key="p6.NativeMobile.Home_Native.text11"
-                        $widgetId="p6.NativeMobile.Home_Native.text11"
+                    <$Text key="p1.NativeMobile.Home_Native.text11"
+                        $widgetId="p1.NativeMobile.Home_Native.text11"
                         style={NativeStyleProperty({
                             "styles": [ styles.Text, styles.h1, styles.textLarge, styles.textCenter ]
                         })}
@@ -57,8 +57,8 @@ const placeholder$Main = () => [
                         accessible={false} />
                 ]}
                 accessible={false} />,
-            <$Button key="p6.NativeMobile.Home_Native.actionButton1"
-                $widgetId="p6.NativeMobile.Home_Native.actionButton1"
+            <$Button key="p1.NativeMobile.Home_Native.actionButton1"
+                $widgetId="p1.NativeMobile.Home_Native.actionButton1"
                 style={NativeStyleProperty({
                     "styles": [ styles.ActionButton, styles.spacingOuterTopMedium ]
                 })}

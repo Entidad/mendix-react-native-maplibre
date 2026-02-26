@@ -15,7 +15,7 @@
   <target name="clean-excluded-jars" description="clean the jar files that should be excluded" />
   <target name="deploy" description="deploy the project">
     <copy todir="${deployment}" overwrite="true">
-      <fileset dir="C:/Program Files/Mendix/10.24.13.86719/modeler/runtemplates/deployment">
+      <fileset dir="C:/Program Files/Mendix/10.24.15.93102/modeler/runtemplates/deployment">
         <exclude name="**/*.template" />
       </fileset>
     </copy>
@@ -30,12 +30,12 @@
     <javac destdir="${deployment}/run/bin" includeAntRuntime="false" debug="true" debuglevel="lines,source" encoding="UTF-8">
       <src path="javasource" />
       <classpath>
-        <fileset file="C:/Program Files/Mendix/10.24.13.86719/runtime/bundles/com.mendix.json.jar" />
-        <fileset file="C:/Program Files/Mendix/10.24.13.86719/runtime/bundles/com.mendix.logging-api.jar" />
-        <fileset file="C:/Program Files/Mendix/10.24.13.86719/runtime/bundles/com.mendix.m2ee-api.jar" />
-        <fileset file="C:/Program Files/Mendix/10.24.13.86719/runtime/bundles/com.mendix.public-api.jar" />
-        <fileset file="C:/Program Files/Mendix/10.24.13.86719/runtime/bundles/org.eclipse.jetty.toolchain.jetty-servlet-api.jar" />
-        <fileset file="C:/Program Files/Mendix/10.24.13.86719/runtime/bundles/org.eclipse.jetty.toolchain.jetty-javax-websocket-api.jar" />
+        <fileset file="C:/Program Files/Mendix/10.24.15.93102/runtime/bundles/com.mendix.json.jar" />
+        <fileset file="C:/Program Files/Mendix/10.24.15.93102/runtime/bundles/com.mendix.logging-api.jar" />
+        <fileset file="C:/Program Files/Mendix/10.24.15.93102/runtime/bundles/com.mendix.m2ee-api.jar" />
+        <fileset file="C:/Program Files/Mendix/10.24.15.93102/runtime/bundles/com.mendix.public-api.jar" />
+        <fileset file="C:/Program Files/Mendix/10.24.15.93102/runtime/bundles/org.eclipse.jetty.toolchain.jetty-servlet-api.jar" />
+        <fileset file="C:/Program Files/Mendix/10.24.15.93102/runtime/bundles/org.eclipse.jetty.toolchain.jetty-javax-websocket-api.jar" />
         <fileset dir="userlib">
           <include name="*.jar" />
         </fileset>

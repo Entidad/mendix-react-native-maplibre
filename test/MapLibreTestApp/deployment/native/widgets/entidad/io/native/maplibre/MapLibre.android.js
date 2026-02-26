@@ -25,26 +25,26 @@ const styles = StyleSheet.create({
         fontWeight: "bold"
     }
 });
-class FarmMap extends Component {
-    parseFarmData() {
+class MapData extends Component {
+    parseMapMarkerData() {
         try {
-            const data = JSON.parse(this.props.farmDataJson);
-            return data.farms || [];
+            const data = JSON.parse(this.props.mapMarkerDataJson);
+            return data.mapMarkers || [];
         }
         catch (error) {
-            console.warn("Failed to parse farm data JSON:", error);
+            console.warn("Failed to parse map marker data JSON:", error);
             return [];
         }
     }
     render() {
-        const farms = this.parseFarmData();
-        const isEmptyData = farms.length === 0;
+        const mapMarkers = this.parseMapMarkerData();
+        const isEmptyData = mapMarkers.length === 0;
         return (createElement(View, { style: styles.container },
             createElement(MapView, { style: styles.map, scrollEnabled: true, pitchEnabled: false, rotateEnabled: false }, !isEmptyData &&
-                farms.map((farm, index) => (createElement(MarkerView, { key: `farm-${index}`, coordinate: [farm.lng, farm.lat] },
+                mapMarkers.map((mapMarker, index) => (createElement(MarkerView, { key: `mapMarker-${index}`, coordinate: [mapMarker.lng, mapMarker.lat] },
                     createElement(View, { style: styles.markerContainer },
                         createElement(View, { style: styles.markerLabel },
-                            createElement(Text, { style: styles.markerText }, farm.name)),
+                            createElement(Text, { style: styles.markerText }, mapMarker.name)),
                         createElement(View, { style: {
                                 width: 12,
                                 height: 12,
@@ -58,7 +58,7 @@ class MapLibre extends Component {
     onClickHandler = this.onClick.bind(this);
     render() {
         const jsonData = this.props.value?.displayValue || "{}";
-        return createElement(FarmMap, { style: this.props.style, onClick: this.onClickHandler, farmDataJson: jsonData });
+        return createElement(MapData, { style: this.props.style, onClick: this.onClickHandler, mapMarkerDataJson: jsonData });
     }
     onClick() {
         const { onClick } = this.props;

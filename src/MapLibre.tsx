@@ -1,6 +1,6 @@
 import { Component, ReactNode, createElement } from "react";
 
-import { FarmMap } from "./components/FarmMap";
+import { MapData } from "./components/MapData";
 import { MapLibreProps } from "../typings/MapLibreProps";
 
 export class MapLibre extends Component<MapLibreProps<any>> {
@@ -9,7 +9,7 @@ export class MapLibre extends Component<MapLibreProps<any>> {
     render(): ReactNode {
         const jsonData = this.props.value?.displayValue || "{}";
 
-        return <FarmMap style={this.props.style} onClick={this.onClickHandler} farmDataJson={jsonData} />;
+        return <MapData style={this.props.style} onClick={this.onClickHandler} mapMarkerDataJson={jsonData} />;
     }
 
     private onClick(): void {

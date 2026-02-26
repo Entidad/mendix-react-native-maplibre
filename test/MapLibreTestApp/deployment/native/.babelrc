@@ -1,14 +1,14 @@
 {
-  "presets": ["module:C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules/@react-native/babel-preset"],
+  "presets": ["module:C:/Program Files/Mendix/10.24.15.93102/modeler/tools/node/node_modules/@react-native/babel-preset"],
   "plugins": [
     [
-      "C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules/babel-plugin-inline-import",
+      "C:/Program Files/Mendix/10.24.15.93102/modeler/tools/node/node_modules/babel-plugin-inline-import",
       {
         "extensions": [".svg"]
       }
     ],
     [
-      "module:C:/Program Files/Mendix/10.24.13.86719/modeler/tools/node/node_modules/react-native-reanimated/plugin"
+      "module:C:/Program Files/Mendix/10.24.15.93102/modeler/tools/node/node_modules/react-native-reanimated/plugin"
     ]
   ]
 }

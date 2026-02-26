@@ -1,6 +1,6 @@
 ext {
 	mendixJavaVersion = 21
-	mendixInstallDir = "C:/Program Files/Mendix/10.24.13.86719"
+	mendixInstallDir = "C:/Program Files/Mendix/10.24.15.93102"
 	projectName = "MapLibreTestApp"
 	projectSafeName = "MapLibreTestApp"
 	mendixProjectDir = "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp"
@@ -8,7 +8,7 @@ ext {
 	dataSnapshotFile = "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/data-snapshot.zip"
 	dataDir = "C:/Users/jorge/Documents/Workspaces/Claude-ws/mapLibre/test/MapLibreTestApp/deployment/data"
 	extractDataSnapshot = false
-	templatesDir = "C:/Program Files/Mendix/10.24.13.86719/modeler/runtemplates"
+	templatesDir = "C:/Program Files/Mendix/10.24.15.93102/modeler/runtemplates"
 	runDir = "run"
 	compileTargetDir = "run/bin"
 	deploymentDirName = "deployment"

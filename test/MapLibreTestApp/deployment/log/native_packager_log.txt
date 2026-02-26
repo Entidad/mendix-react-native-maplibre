@@ -1,4 +1,4 @@
-C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\win-arm64\node.exe C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\node_modules\react-native\cli.js start --config "C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\metro.config.js" --custom-log-reporter-path "C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\MxTerminalReporter.js" --port "8083"
+C:\Program Files\Mendix\10.24.15.93102\modeler\tools\node\win-arm64\node.exe C:\Program Files\Mendix\10.24.15.93102\modeler\tools\node\node_modules\react-native\cli.js start --config "C:\Users\jorge\Documents\Workspaces\Claude-ws\mapLibre\test\MapLibreTestApp\deployment\native\metro.config.js" --custom-log-reporter-path "C:\Program Files\Mendix\10.24.15.93102\modeler\tools\node\MxTerminalReporter.js" --port "8083"
 
 [Output] Welcome to React Native v0.77
 [Output] Starting dev server on http://localhost:8083
@@ -34,21 +34,12 @@ C:\Program Files\Mendix\10.24.13.86719\modeler\tools\node\win-arm64\node.exe C:\
 [Output]    j  - open DevTools
 
 [Output] MxTerminalReporter: {"event":"bundle_build_started"}
-[Output] transform[stderr]: (node:908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:13800) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output] transform[stderr]: (node:4760) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:3876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output]  BUNDLE  ./index.js 
-
-[Output] MxTerminalReporter: {"event":"bundle_build_done"}
-[Output] MxTerminalReporter: {"event":"bundle_build_started"}
-[Output] transform[stderr]: (node:11708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-[Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
-[Output] transform[stderr]: (node:5400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[Output] transform[stderr]: (node:6688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [Output] transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
 [Output]  BUNDLE  ./index.js 
 
 [Output] MxTerminalReporter: {"event":"bundle_build_done"}
-[Output]  INFO  
-[Output] [7m [1mðŸ’¡ JavaScript logs have moved![22m They can now be viewed in React Native DevTools. Tip: Type [1mj[22m in the terminal to open (requires Google Chrome or Microsoft Edge).[27m
-
