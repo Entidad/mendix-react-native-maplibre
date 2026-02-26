@@ -1,6 +1,6 @@
 import { Component, ReactNode, createElement } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { MapView, MarkerView } from "@maplibre/maplibre-react-native";
+import { MapView, MarkerView, Camera } from "@maplibre/maplibre-react-native";
 
 interface MapMarker {
     name: string;
@@ -16,6 +16,7 @@ interface MapDataProps {
     mapMarkerDataJson: string;
     style?: any[];
     onClick?: () => void;
+    mapStyle?: string;
 }
 
 const styles = StyleSheet.create({
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     markerLabel: {
-        backgroundColor: "#D9534F",
+        backgroundColor: "#1C7D77",
         paddingHorizontal: 8,
         paddingVertical: 4,
         borderRadius: 4,
@@ -59,7 +60,8 @@ export class MapData extends Component<MapDataProps> {
 
         return (
             <View style={styles.container}>
-                <MapView style={styles.map} scrollEnabled pitchEnabled={false} rotateEnabled={false}>
+                <MapView style={styles.map} scrollEnabled pitchEnabled={false} rotateEnabled={false} mapStyle={this.props.mapStyle}>
+                    <Camera centerCoordinate={[-119.126, 34.3575]} zoomLevel={7} />
                     {!isEmptyData &&
                         mapMarkers.map((mapMarker, index) => (
                             <MarkerView key={`mapMarker-${index}`} coordinate={[mapMarker.lng, mapMarker.lat]}>
@@ -72,7 +74,7 @@ export class MapData extends Component<MapDataProps> {
                                             width: 12,
                                             height: 12,
                                             borderRadius: 6,
-                                            backgroundColor: "#D9534F"
+                                            backgroundColor: "#1C7D77"
                                         }}
                                     />
                                 </View>

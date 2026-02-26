@@ -10,7 +10,8 @@ import { Big } from "big.js";
 export interface MapLibreProps<Style> {
     name: string;
     style: Style[];
-    value?: EditableValue<string | Big>;
+    mapData?: EditableValue<string | Big>;
+    mapStyle?: EditableValue<string>;
     onClick?: ActionValue;
 }
 
@@ -25,6 +26,7 @@ export interface MapLibrePreviewProps {
     readOnly: boolean;
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
-    value: string;
+    mapData: string;
+    mapStyle: string;
     onClick: {} | null;
 }

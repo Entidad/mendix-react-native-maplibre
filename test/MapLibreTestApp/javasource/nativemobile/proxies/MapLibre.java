@@ -20,7 +20,8 @@ public class MapLibre implements com.mendix.systemwideinterfaces.core.IEntityPro
 	 */
 	public enum MemberNames
 	{
-		Value("Value");
+		mapData("mapData"),
+		mapStyle("mapStyle");
 
 		private final java.lang.String metaName;
 
@@ -73,39 +74,75 @@ public class MapLibre implements com.mendix.systemwideinterfaces.core.IEntityPro
 	}
 
 	/**
-	 * @return value of Value
+	 * @return value of mapData
 	 */
-	public final java.lang.String getValue()
+	public final java.lang.String getmapData()
 	{
-		return getValue(getContext());
+		return getmapData(getContext());
 	}
 
 	/**
 	 * @param context
-	 * @return value of Value
+	 * @return value of mapData
 	 */
-	public final java.lang.String getValue(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getmapData(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Value.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.mapData.toString());
 	}
 
 	/**
-	 * Set value of Value
-	 * @param value
+	 * Set value of mapData
+	 * @param mapdata
 	 */
-	public final void setValue(java.lang.String value)
+	public final void setmapData(java.lang.String mapdata)
 	{
-		setValue(getContext(), value);
+		setmapData(getContext(), mapdata);
 	}
 
 	/**
-	 * Set value of Value
+	 * Set value of mapData
 	 * @param context
-	 * @param value
+	 * @param mapdata
 	 */
-	public final void setValue(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String value)
+	public final void setmapData(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String mapdata)
 	{
-		getMendixObject().setValue(context, MemberNames.Value.toString(), value);
+		getMendixObject().setValue(context, MemberNames.mapData.toString(), mapdata);
+	}
+
+	/**
+	 * @return value of mapStyle
+	 */
+	public final java.lang.String getmapStyle()
+	{
+		return getmapStyle(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of mapStyle
+	 */
+	public final java.lang.String getmapStyle(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.mapStyle.toString());
+	}
+
+	/**
+	 * Set value of mapStyle
+	 * @param mapstyle
+	 */
+	public final void setmapStyle(java.lang.String mapstyle)
+	{
+		setmapStyle(getContext(), mapstyle);
+	}
+
+	/**
+	 * Set value of mapStyle
+	 * @param context
+	 * @param mapstyle
+	 */
+	public final void setmapStyle(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String mapstyle)
+	{
+		getMendixObject().setValue(context, MemberNames.mapStyle.toString(), mapstyle);
 	}
 
 	@java.lang.Override
