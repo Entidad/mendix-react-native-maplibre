@@ -21,6 +21,13 @@ PODS:
   - libwebp/sharpyuv (1.5.0)
   - libwebp/webp (1.5.0):
     - libwebp/sharpyuv
+  - maplibre-react-native (10.4.2):
+    - maplibre-react-native/DynamicLibrary (= 10.4.2)
+    - React
+    - React-Core
+  - maplibre-react-native/DynamicLibrary (10.4.2):
+    - React
+    - React-Core
   - op-sqlite (9.2.7):
     - OpenSSL-Universal
     - React
@@ -1824,6 +1831,7 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - IQKeyboardManager
+  - "maplibre-react-native (from `../node_modules/@maplibre/maplibre-react-native`)"
   - "op-sqlite (from `../node_modules/@op-engineering/op-sqlite`)"
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
@@ -1936,6 +1944,8 @@ EXTERNAL SOURCES:
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
     :tag: hermes-2024-11-25-RNv0.77.0-d4f25d534ab744866448b36ca3bf3d97c08e638c
+  maplibre-react-native:
+    :path: "../node_modules/@maplibre/maplibre-react-native"
   op-sqlite:
     :path: "../node_modules/@op-engineering/op-sqlite"
   RCT-Folly:
@@ -2111,6 +2121,7 @@ SPEC CHECKSUMS:
   hermes-engine: b2187dbe13edb0db8fcb2a93a69c1987a30d98a4
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
+  maplibre-react-native: 37d86b5b7b04dedaceebc577644e67acd7b5f437
   op-sqlite: 0d4f6014d7eb4347bff281fd4cd7970fdf111276
   OpenSSL-Universal: 6082b0bf950e5636fe0d78def171184e2b3899c2
   RCT-Folly: e78785aa9ba2ed998ea4151e314036f6c49e6d82
@@ -2187,7 +2198,7 @@ SPEC CHECKSUMS:
   RNFastImage: 462a183c4b0b6b26fdfd639e1ed6ba37536c3b87
   RNGestureHandler: 9bf6e8f72d2e72c8f7eb45986fe71a5005fb072d
   RNLocalize: e7378161f0b6a6365407eb2377aab46cc38047d8
-  RNPermissions: 6a02e3cb2c65fbcdceb5111131e7725cda40efd2
+  RNPermissions: 04ad164284f37929714057c6883d8ca3339c089b
   RNReanimated: 20f0d150af988258289b2d6cda655bd14945a769
   RNScreens: 86e5c168cdd055a8feead28eb756ca7103918b6a
   RNSVG: 4903d466c3a877644d5219dbc1d97f9ef9e4a3cc
@@ -2199,6 +2210,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
   Yoga: 92f3bb322c40a86b7233b815854730442e01b8c4
 
-PODFILE CHECKSUM: 6b09d592b26ddbc7d2bfae3b0af220c4e3b54925
+PODFILE CHECKSUM: 73af3717f656e63128e3ebc15b00f04ee2b2d936
 
 COCOAPODS: 1.16.2
