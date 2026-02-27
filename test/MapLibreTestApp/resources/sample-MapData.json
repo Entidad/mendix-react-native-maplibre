@@ -3,12 +3,29 @@
         {
             "name": "Camarillo",
             "lat": 34.2163,
-            "lng": -119.0374
+            "lng": -119.0374,
+            "crop": "Strawberries",
+            "salary": "~$18.50/hr",
+            "role": "Crop picker",
+            "iconUrl": "http://192.168.4.161:8080/location_marker.png"
         },
         {
             "name": "Oxnard",
             "lat": 34.1974,
-            "lng": -119.1770
+            "lng": -119.1770,
+            "crop": "Strawberries",
+            "salary": "~$16.50/hr",
+            "role": "Crop picker",
+            "iconUrl": "http://192.168.4.161:8080/location_marker.png"
+        },
+        {
+            "name": "Santa Paula",
+            "lat": 34.3534,
+            "lng": -119.0676,
+            "crop": "Oranges",
+            "salary": "~$14.50/hr",
+            "role": "Crop picker",
+            "iconUrl": "http://192.168.4.161:8080/location_marker.png"
         }
     ]
 }

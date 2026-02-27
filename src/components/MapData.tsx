@@ -1,5 +1,5 @@
 import { Component, ReactNode, createElement } from "react";
-import { View, Text, StyleSheet, Pressable, Modal } from "react-native";
+import { View, Text, StyleSheet, Pressable, Modal, Image } from "react-native";
 import { MapView, MarkerView, Camera } from "@maplibre/maplibre-react-native";
 
 interface MapMarker {
@@ -9,6 +9,7 @@ interface MapMarker {
     crop?: string;
     salary?: string;
     role?: string;
+    iconUrl?: string;
 }
 
 interface MapMarkerData {
@@ -34,18 +35,9 @@ const styles = StyleSheet.create({
         flex: 1
     },
     markerIcon: {
-        width: 24,
-        height: 24,
-        borderRadius: 12,
-        backgroundColor: "#1C7D77",
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    markerIconInner: {
-        width: 12,
-        height: 12,
-        borderRadius: 6,
-        backgroundColor: "#FFFFFF"
+        width: 64,
+        height: 64,
+        resizeMode: "contain"
     },
     annotationContainer: {
         backgroundColor: "#FFFFFF",
@@ -106,14 +98,18 @@ export class MapData extends Component<MapDataProps, MapDataState> {
         return (
             <View style={styles.container}>
                 <MapView style={styles.map} scrollEnabled pitchEnabled={false} rotateEnabled={false} mapStyle={this.props.mapStyle}>
-                    <Camera centerCoordinate={[-119.126, 34.3575]} zoomLevel={7} />
+                    <Camera centerCoordinate={[-119.126, 34.3575]} zoomLevel={5} />
                     {!isEmptyData &&
                         mapMarkers.map((mapMarker, index) => (
                             <MarkerView key={`mapMarker-${index}`} coordinate={[mapMarker.lng, mapMarker.lat]}>
                                 <Pressable onPress={() => this.handleMarkerPress(index)}>
-                                    <View style={styles.markerIcon}>
-                                        <View style={styles.markerIconInner} />
-                                    </View>
+                                    {mapMarker.iconUrl ? (
+                                        <Image source={{ uri: mapMarker.iconUrl }} style={styles.markerIcon} />
+                                    ) : (
+                                        <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: "#1C7D77", justifyContent: "center", alignItems: "center" }}>
+                                            <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: "#FFFFFF" }} />
+                                        </View>
+                                    )}
                                 </Pressable>
                             </MarkerView>
                         ))}
