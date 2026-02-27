@@ -15,13 +15,19 @@ public final class Constants
 
 	// These are the constants for the NativeMobile module
 
+	/**
+	* URL string specifying the vector map to be rendered by the MapLibre Native widget. Reference: https://github.com/maplibre/demotiles?tab=readme-ov-file
+	*/
+	public static java.lang.String getMAP_STYLE_VECTOR_URL()
+	{
+		return (java.lang.String)Core.getConfiguration().getConstantValue("NativeMobile.MAP_STYLE_VECTOR_URL");
+	}
+
+	/**
+	* For production use, please use your own style/tiles or use a provider like Stadia Maps or MapTiler. This constant is used to store the MapTiler API Key which can be obtained for free @ https://www.maptiler.com/cloud
+	*/
 	public static java.lang.String getMAPTILER_API_KEY()
 	{
 		return (java.lang.String)Core.getConfiguration().getConstantValue("NativeMobile.MAPTILER_API_KEY");
-	}
-
-	public static java.lang.String getMAPTILER_MAPSTYLE_VECTOR_URL()
-	{
-		return (java.lang.String)Core.getConfiguration().getConstantValue("NativeMobile.MAPTILER_MAPSTYLE_VECTOR_URL");
 	}
 }
