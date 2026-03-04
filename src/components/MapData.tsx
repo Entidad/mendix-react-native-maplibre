@@ -1,6 +1,7 @@
 import { Component, ReactNode, createElement } from "react";
-import { View, Text, StyleSheet, Pressable, Modal, Image } from "react-native";
+import { View, Text, Pressable, Modal, Image } from "react-native";
 import { MapView, MarkerView, Camera } from "@maplibre/maplibre-react-native";
+import { mapDataStyles as styles } from "../ui/styles";
 
 interface MapMarker {
     name: string;
@@ -26,47 +27,6 @@ interface MapDataProps {
 interface MapDataState {
     selectedMarkerIndex: number | null;
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-    map: {
-        flex: 1
-    },
-    markerIcon: {
-        width: 64,
-        height: 64,
-        resizeMode: "contain"
-    },
-    annotationContainer: {
-        backgroundColor: "#FFFFFF",
-        borderRadius: 8,
-        paddingHorizontal: 12,
-        paddingVertical: 8,
-        minWidth: 150,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5
-    },
-    annotationTitle: {
-        fontSize: 14,
-        fontWeight: "bold",
-        color: "#1C7D77",
-        marginBottom: 8
-    },
-    annotationItem: {
-        fontSize: 12,
-        color: "#333333",
-        marginBottom: 4
-    },
-    annotationLabel: {
-        fontWeight: "600",
-        color: "#1C7D77"
-    }
-});
 
 export class MapData extends Component<MapDataProps, MapDataState> {
     constructor(props: MapDataProps) {
@@ -97,7 +57,7 @@ export class MapData extends Component<MapDataProps, MapDataState> {
 
         return (
             <View style={styles.container}>
-                <MapView style={styles.map} scrollEnabled pitchEnabled={false} rotateEnabled={false} mapStyle={this.props.mapStyle}>
+                <MapView style={styles.map} scrollEnabled pitchEnabled={false} rotateEnabled={false} mapStyle={this.props.mapStyle} logoEnabled logoPosition={{ bottom: 10, left: 10 }}>
                     <Camera centerCoordinate={[-119.126, 34.3575]} zoomLevel={5} />
                     {!isEmptyData &&
                         mapMarkers.map((mapMarker, index) => (
