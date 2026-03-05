@@ -40,7 +40,12 @@ If you are interested in contributing improvements or additional mapping capabil
 7. Swift Package Spec for iOS: `https://github.com/maplibre/maplibre-gl-native-distribution`
 
 ## Native build setup
-1. Install [MapLibre ReactNative](https://maplibre.org/maplibre-react-native/docs/setup/react-native) npm package `@maplibre/maplibre-react-native`
+1. Use demo Native template embedded in `./test/MapLibreTestApp/resources/nativeTemplate`
+2. Install [MapLibre ReactNative](https://maplibre.org/maplibre-react-native/docs/setup/react-native) npm package `npm install @maplibre/maplibre-react-native`
+3. `npm install --legacy-peer-deps`
+4. `npm run configure`
+5. `cd ios`
+6. `pod install --repo-update`
 
 ### iOS build instructions
 For iOS, follow the instructions documented [here](https://maplibre.org/maplibre-react-native/docs/setup/react-native)
