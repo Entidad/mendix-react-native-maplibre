@@ -4,7 +4,7 @@ Renders map [markers](https://maplibre.org/maplibre-react-native/docs/components
 ![Demo screenshot 01](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_001.png)![Demo screenshot 02](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_002.png) ![Demo screenshot 03| 619x1283](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_003.png) 
 
 ## Features
-1. Render a [JSON data set](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/sample-MapData.json) as interactive react native markers to a map direclty from your Native mobile app
+1. Render a [JSON data set](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/sample-MapData.json) as interactive react native markers to a map directly from your Native mobile app
 2. Inclues open-source Git repository which lets you customize the widget to your custom `MarkeyView` data set and `MapView` requirements
 3. Get a demo up an running quickly using open-source Map styles maintained by the [MapLibre](https://github.com/maplibre/demotiles) community
 4. Ability to configure commercially available Map styles/tiles from providers like [MapTiler](https://www.maptiler.com/) for production deployments
