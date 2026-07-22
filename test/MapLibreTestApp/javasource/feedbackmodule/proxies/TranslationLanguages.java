@@ -6,14 +6,14 @@ package feedbackmodule.proxies;
 
 public enum TranslationLanguages
 {
-	Dutch("d1894095-a4f9-4827-8455-384b4ca89063"),
-	English("14a52d93-cbc3-4117-9d56-735d8ee404af"),
-	French("1ac401d7-68db-4c0c-b249-cebba02235f6"),
-	German("d733a737-9cf5-4bdc-9f33-e9d77915bcd2"),
-	Hindi("6f0a7147-50e8-4570-8dd3-216ec9f78a21"),
-	Portuguese("10071846-4872-4d9e-bf93-acdbc842c3a8"),
-	Spanish("db392950-c619-4296-b16a-42fff4435ce6"),
-	Turkish("cda96f61-6456-45aa-a07f-0d7535feebb5");
+	Dutch("bf9e1113-6e65-4567-930f-52ad79a43cc1"),
+	English("0e3c5c02-f609-423d-93a7-9efa800791a5"),
+	French("85a5bbbf-ad48-467b-ab0a-e4a9c8bf2112"),
+	German("f7754ca2-3bd9-4716-a318-3633ff5fb303"),
+	Hindi("750493fc-3728-4be4-9fca-18be89feabbf"),
+	Portuguese("8126750b-d4fc-49e6-a746-ba3822986678"),
+	Spanish("e167ca88-8e55-4cd0-be4f-0ce284f1377e"),
+	Turkish("d932f56b-d40f-4460-a6a9-c484f4783ad2");
 
 	private final java.lang.String i18nCaptionKey;
 	

@@ -1,12 +1,12 @@
 {
   "name": "maplibre",
   "widgetName": "MapLibre",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Display maps inside your native app with MapLibre Native (https://maplibre.org/).",
   "copyright": "© Entidad 2026. All Rights Reserved.",
   "author": "Jorge Flores",
   "engines": {
-    "node": ">=20"
+    "node": ">=20.19.4"
   },
   "license": "Apache-2.0",
   "config": {
@@ -22,22 +22,20 @@
     "release": "pluggable-widgets-tools release:native"
   },
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^10.24.0",
+    "@mendix/pluggable-widgets-tools": "^11.12.0",
     "@types/big.js": "^6.0.2"
   },
   "dependencies": {
-    "@maplibre/maplibre-react-native": "^10.4.2"
+    "@maplibre/maplibre-react-native": "^11.3.6"
   },
   "resolutions": {
-    "react": "^18.2.0",
-    "@types/react": "^18.2.0",
-    "react-native": "0.77.3",
-    "@types/react-native": "0.72.7"
+    "react": "^19.2.0",
+    "@types/react": "^19.0.0",
+    "react-native": "0.84.1"
   },
   "overrides": {
-    "react": "^18.2.0",
-    "@types/react": "^18.2.0",
-    "react-native": "0.77.3",
-    "@types/react-native": "0.72.7"
+    "react": "^19.2.0",
+    "@types/react": "^19.0.0",
+    "react-native": "0.84.1"
   }
 }

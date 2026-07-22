@@ -56,21 +56,21 @@ public final class Microflows
 			.execute(context);
 		return (java.lang.String) result;
 	}
-	public static com.mendix.core.actionmanagement.MicroflowCallBuilder populateUserAttributesBuilder(
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder populateAttributesBuilder(
 		feedbackmodule.proxies.Feedback _feedback
 	)
 	{
-		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("FeedbackModule.PopulateUserAttributes");
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("FeedbackModule.PopulateAttributes");
 		builder = builder.withParam("Feedback", _feedback);
 		return builder;
 	}
 
-	public static void populateUserAttributes(
+	public static void populateAttributes(
 		IContext context,
 		feedbackmodule.proxies.Feedback _feedback
 	)
 	{
-		populateUserAttributesBuilder(
+		populateAttributesBuilder(
 				_feedback
 			)
 			.execute(context);

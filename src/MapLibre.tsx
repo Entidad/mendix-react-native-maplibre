@@ -1,4 +1,4 @@
-import { Component, ReactNode, createElement } from "react";
+import { Component, ReactNode } from "react";
 
 import { MapData } from "./components/MapData";
 import { MapLibreProps } from "../typings/MapLibreProps";
@@ -10,7 +10,14 @@ export class MapLibre extends Component<MapLibreProps<any>> {
         const jsonData = this.props.mapData?.displayValue || "{}";
         const styleUrl = this.props.mapStyle?.displayValue || "https://demotiles.maplibre.org/style.json";
 
-        return <MapData style={this.props.style} onClick={this.onClickHandler} mapMarkerDataJson={jsonData} mapStyle={styleUrl} />;
+        return (
+            <MapData
+                style={this.props.style}
+                onClick={this.onClickHandler}
+                mapMarkerDataJson={jsonData}
+                mapStyle={styleUrl}
+            />
+        );
     }
 
     private onClick(): void {

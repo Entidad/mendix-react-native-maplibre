@@ -6,9 +6,9 @@ package nativemobileresources.proxies;
 
 public enum StatusBarHideShowAnimation
 {
-	none("7b185833-660c-42a7-9601-0d51fca8f69e"),
-	fade("d134348c-e6f2-434f-ab6c-c65ce0b61c83"),
-	slide("b8043031-b5ee-4df3-8171-486082b03947");
+	none("ea8c5aa0-73af-4024-9273-0cb1fb9ab428"),
+	fade("3fe77bae-4f24-44ce-a6e1-9923043b9ada"),
+	slide("4a71e1fa-87fb-4516-9a4b-9a6a63333188");
 
 	private final java.lang.String i18nCaptionKey;
 	

@@ -1,6 +1,6 @@
-import { Component, ReactNode, createElement } from "react";
+import { Component, ReactNode } from "react";
 import { View, Text, Pressable, Modal, Image } from "react-native";
-import { MapView, MarkerView, Camera } from "@maplibre/maplibre-react-native";
+import { Map, Marker, Camera } from "@maplibre/maplibre-react-native";
 import { mapDataStyles as styles } from "../ui/styles";
 
 interface MapMarker {
@@ -46,43 +46,74 @@ export class MapData extends Component<MapDataProps, MapDataState> {
         }
     }
 
-    private handleMarkerPress = (index: number) => {
-        this.setState({ selectedMarkerIndex: this.state.selectedMarkerIndex === index ? null : index });
+    private handleMarkerPress = (index: number): void => {
+        this.setState(prevState => ({
+            selectedMarkerIndex: prevState.selectedMarkerIndex === index ? null : index
+        }));
     };
 
     render(): ReactNode {
         const mapMarkers = this.parseMapMarkerData();
         const isEmptyData = mapMarkers.length === 0;
-        const selectedMarker = this.state.selectedMarkerIndex !== null ? mapMarkers[this.state.selectedMarkerIndex] : null;
+        const selectedMarker =
+            this.state.selectedMarkerIndex !== null ? mapMarkers[this.state.selectedMarkerIndex] : null;
 
         return (
             <View style={styles.container}>
-                <MapView style={styles.map} scrollEnabled pitchEnabled={false} rotateEnabled={false} mapStyle={this.props.mapStyle} logoEnabled logoPosition={{ bottom: 10, left: 10 }}>
-                    <Camera centerCoordinate={[-119.126, 34.3575]} zoomLevel={5} />
+                <Map
+                    style={styles.map}
+                    touchPitch={false}
+                    touchRotate={false}
+                    mapStyle={this.props.mapStyle ?? "https://demotiles.maplibre.org/style.json"}
+                    logo
+                    logoPosition={{ bottom: 10, left: 10 }}
+                >
+                    <Camera initialViewState={{ center: [-119.126, 34.3575], zoom: 5 }} />
                     {!isEmptyData &&
                         mapMarkers.map((mapMarker, index) => (
-                            <MarkerView key={`mapMarker-${index}`} coordinate={[mapMarker.lng, mapMarker.lat]}>
+                            <Marker key={`mapMarker-${index}`} lngLat={[mapMarker.lng, mapMarker.lat]}>
                                 <Pressable onPress={() => this.handleMarkerPress(index)}>
                                     {mapMarker.iconUrl ? (
                                         <Image source={{ uri: mapMarker.iconUrl }} style={styles.markerIcon} />
                                     ) : (
-                                        <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: "#1C7D77", justifyContent: "center", alignItems: "center" }}>
-                                            <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: "#FFFFFF" }} />
+                                        <View
+                                            style={{
+                                                width: 24,
+                                                height: 24,
+                                                borderRadius: 12,
+                                                backgroundColor: "#1C7D77",
+                                                justifyContent: "center",
+                                                alignItems: "center"
+                                            }}
+                                        >
+                                            <View
+                                                style={{
+                                                    width: 12,
+                                                    height: 12,
+                                                    borderRadius: 6,
+                                                    backgroundColor: "#FFFFFF"
+                                                }}
+                                            />
                                         </View>
                                     )}
                                 </Pressable>
-                            </MarkerView>
+                            </Marker>
                         ))}
-                </MapView>
+                </Map>
                 {selectedMarker && (
                     <Modal
                         visible={!!selectedMarker}
-                        transparent={true}
+                        transparent
                         animationType="fade"
                         onRequestClose={() => this.setState({ selectedMarkerIndex: null })}
                     >
                         <Pressable
-                            style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+                            style={{
+                                flex: 1,
+                                justifyContent: "center",
+                                alignItems: "center",
+                                backgroundColor: "rgba(0, 0, 0, 0.5)"
+                            }}
                             onPress={() => this.setState({ selectedMarkerIndex: null })}
                         >
                             <View style={styles.annotationContainer}>

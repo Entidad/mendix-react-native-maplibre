@@ -1,6 +1,6 @@
 {
     "configVersion": 2,
-    "appIdentifier": "entidad.io.native.maplibretest",
+    "appIdentifier": "io.entidad.app.fwos.maplibre",
     "appName": "MapLibreTestApp",
     "bundleName": {
         "main": "MapLibreTestApp",
@@ -8,7 +8,7 @@
     },
     "deviceTarget": {
         "phone": true,
-        "tablet": true
+        "tablet": false
     },
     "orientation": {
         "portrait": true,
@@ -40,18 +40,42 @@
             "required": false
         },
         {
+            "title": "Read Media Images",
+            "name": "android.permission.READ_MEDIA_IMAGES",
+            "platform": "android",
+            "required": false
+        },
+        {
+            "title": "Read Media Video",
+            "name": "android.permission.READ_MEDIA_VIDEO",
+            "platform": "android",
+            "required": false
+        },
+        {
+            "title": "Read Media Audio",
+            "name": "android.permission.READ_MEDIA_AUDIO",
+            "platform": "android",
+            "required": false
+        },
+        {
+            "title": "Read Media Visual User Selected",
+            "name": "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+            "platform": "android",
+            "required": false
+        },
+        {
             "title": "Location - When In Use Usage",
             "name": "NSLocationWhenInUseUsageDescription",
             "purpose": "To use that feature, the app needs access to your location.",
             "platform": "ios",
-            "required": true
+            "required": false
         },
         {
             "title": "Location - Always And When in Use Usage",
             "name": "NSLocationAlwaysAndWhenInUseUsageDescription",
             "purpose": "To use that feature, the app needs access to your location.",
             "platform": "ios",
-            "required": true
+            "required": false
         },
         {
             "title": "Camera Usage",
@@ -70,13 +94,6 @@
             "title": "System Alert Window",
             "name": "android.permission.SYSTEM_ALERT_WINDOW",
             "platform": "android",
-            "required": true
-        },
-        {
-            "title": "Location - Always Usage",
-            "name": "NSLocationAlwaysUsageDescription",
-            "purpose": "To use that feature, the app needs access to your location.",
-            "platform": "ios",
             "required": true
         }
     ],
@@ -122,9 +139,9 @@
             "enabled": false
         }
     },
-    "appVersion": "1.0.0",
-    "buildNumber": 3,
-    "runtimeUrl": "http://192.168.4.161:8080",
+    "appVersion": "2.0.0",
+    "buildNumber": 10,
+    "runtimeUrl": "http://localhost:8080",
     "hermesEnabled": true,
     "cookieEncryptionEnabled": false
 }

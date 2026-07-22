@@ -6,7 +6,7 @@ package feedbackmodule.proxies;
 
 public enum LogNodes
 {
-	FeedbackModule("730d6ba7-3460-487b-8c09-69b64aff0308");
+	FeedbackModule("cd4c3e05-634c-4228-9406-f1034f6f85b5");
 
 	private final java.lang.String i18nCaptionKey;
 	

@@ -21,7 +21,7 @@ Navigate to the `./test/MapLibreTestApp` directory to access the sample implemen
 Submit issues [here](https://github.com/Entidad/mendix-react-native-maplibre/issues)
 
 ## Development and contribution
-1. Switch to Node 20 by using: `nvm use 20`
+1. Switch to Node 24 (bundled with Studio Pro 11.12; minimum supported is 20.19.4) by using: `nvm use 24`
 2. Install NPM package dependencies by using: `npm install`.
 3. Run `npm start` to watch for code changes. On every change:
     - the widget will be bundled;
@@ -31,13 +31,15 @@ Submit issues [here](https://github.com/Entidad/mendix-react-native-maplibre/iss
 If you are interested in contributing improvements or additional mapping capabilities, submit a pull request (PR)    
 
 ## Depedencies
-1. Mendix Studio Pro `10.25.15` or newer
-2. Mendix Native Template `v14.1.14`
-3. [MapLibre](https://maplibre.org/) open-source mapping libraries
-4. [MapLibre React Native library](https://github.com/maplibre/maplibre-react-native)
+1. Mendix Studio Pro `11.12.1` or newer (bundles Node `24`, React Native `0.84.1` / React `19`)
+2. Mendix Native Template `v19.1.2`
+3. [MapLibre React Native library](https://github.com/maplibre/maplibre-react-native) `v11.3.6`
+4. [MapLibre](https://maplibre.org/) open-source mapping libraries
 5. [MapLibre React Native docs](https://maplibre.org/maplibre-react-native/)
 6. [MapLibre Demo Tiles](https://github.com/maplibre/demotiles)
 7. Swift Package Spec for iOS: `https://github.com/maplibre/maplibre-gl-native-distribution`
+
+> **Note:** Widget `2.0.0` targets Mendix `11.x` and MapLibre React Native `v11`. For Mendix Studio Pro `10.x` (Native Template `v14.x`, MapLibre React Native `v10`), use widget `1.0.0`.
 
 ## Native build setup
 1. Use demo Native template embedded in `./test/MapLibreTestApp/resources/nativeTemplate`

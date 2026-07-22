@@ -15,11 +15,6 @@ public final class Constants
 
 	// These are the constants for the FeedbackModule module
 
-	public static java.lang.String getClientIdentifier()
-	{
-		return (java.lang.String)Core.getConfiguration().getConstantValue("FeedbackModule.ClientIdentifier");
-	}
-
 	public static java.lang.String getLocalStorageKey()
 	{
 		return (java.lang.String)Core.getConfiguration().getConstantValue("FeedbackModule.LocalStorageKey");
