@@ -1,5 +1,5 @@
 ## MapLibre Native MarkerView Widget
-Renders map [markers](https://maplibre.org/maplibre-react-native/docs/components/general/marker-view) on OpenStreetMap style vector maps inside your native app with [MapLibre Native](https://maplibre.org/).
+Renders MapLibre Native [map](https://maplibre.org/maplibre-react-native/docs/components/map) and [marker](https://maplibre.org/maplibre-react-native/docs/components/annotations/marker) views on OpenStreetMap style vector maps inside your native app with [MapLibre Native](https://maplibre.org/).
 
 ![Demo screenshot 01](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_001.png)![Demo screenshot 02](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_002.png) ![Demo screenshot 03| 619x1283](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_003.png) 
 
@@ -44,10 +44,11 @@ If you are interested in contributing improvements or additional mapping capabil
 ## Native build setup
 1. Use demo Native template embedded in `./test/MapLibreTestApp/resources/nativeTemplate`
 2. Install [MapLibre ReactNative](https://maplibre.org/maplibre-react-native/docs/setup/react-native) npm package `npm install @maplibre/maplibre-react-native`
-3. `npm install --legacy-peer-deps`
-4. `npm run configure`
-5. `cd ios`
-6. `pod install --repo-update`
+3. `nvm use 24`
+4. `npm install --legacy-peer-deps`
+5. `npm run configure`
+6. `cd ios`
+7. `pod install --repo-update`
 
 ### iOS build instructions
 For iOS, follow the instructions documented [here](https://maplibre.org/maplibre-react-native/docs/setup/react-native)
@@ -57,7 +58,8 @@ On iOS it's necessary to add `$MLRN.post_install(installer)` to the `post_instal
 ```
 post_install do |installer|
   # Other post install hooks...
-+ $MLRN.post_install(installer)
+  $MLRN.post_install(installer)
+  ...
 end
 ```
 #### For `Release` builds, add a Build Phase `Run Script`
