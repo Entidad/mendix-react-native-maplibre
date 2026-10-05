@@ -4,15 +4,27 @@ Renders MapLibre Native [map](https://maplibre.org/maplibre-react-native/docs/co
 ![Demo screenshot 01](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_001.png)![Demo screenshot 02](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_002.png) ![Demo screenshot 03| 619x1283](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/demo_003.png) 
 
 ## Features
-1. Render a [JSON data set](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/sample-MapData.json) as interactive react native markers to a map directly from your Native mobile app
-2. Inclues open-source Git repository which lets you customize the widget to your custom `MarkeyView` data set and `MapView` requirements
-3. Get a demo up an running quickly using open-source Map styles maintained by the [MapLibre](https://github.com/maplibre/demotiles) community
-4. Ability to configure commercially available Map styles/tiles from providers like [MapTiler](https://www.maptiler.com/) for production deployments
+1. Render any Mendix entity as interactive markers, retrieved from the Database, over an Association, or by a Nanoflow
+2. Multiple marker layers, each with its own data source, bundled image icon (no network fetch) and popup
+3. Design the marker popup in Studio Pro with any widgets, and trigger an action with the tapped object
+4. Inclues open-source Git repository which lets you customize the widget to your custom `MarkeyView` data set and `MapView` requirements
+5. Get a demo up an running quickly using open-source Map styles maintained by the [MapLibre](https://github.com/maplibre/demotiles) community
+6. Ability to configure commercially available Map styles/tiles from providers like [MapTiler](https://www.maptiler.com/) for production deployments
 
 ## Usage
 1. Download widget from the Mendix Marketplace
-2. Configure the `Map Data` widget property with a JSON string containing the [sample JSON data set](https://github.com/Entidad/mendix-react-native-maplibre/blob/main/test/MapLibreTestApp/resources/sample-MapData.json)
-3. Configure the `Map Style` widget property with a string referencing the demo Map style `https://demotiles.maplibre.org/style.json`
+2. Configure the `Map Style` widget property with a string referencing the demo Map style `https://demotiles.maplibre.org/style.json`
+3. Add one or more `Marker layers`. For each layer:
+    - **Data source**: Database (with optional XPath), Association, or Nanoflow returning a list of marker objects
+    - **Latitude / Longitude**: Decimal, Integer, Long or String attributes; objects without a valid coordinate are skipped
+    - **Icon**: a static image from an image collection (PNG recommended), bundled into the app. Use a separate layer per icon to show different marker types
+    - **Popup content**: drop any widgets here; they render in a popup with the tapped object as context
+    - **On marker click**: optional action that receives the tapped object
+
+4. Optional **Popup visible**: a Boolean attribute on the page's context object, set to `true` when a marker is tapped; set it to `false` (e.g. from a close button in the popup content) to close the popup. The popup scrolls when its content is taller than the screen
+5. Optional **Attribution**: show/hide and position the (i) attribution button, add an always-visible credit line (e.g. `© MapTiler © OpenStreetMap contributors`), and set a tint color for the map's buttons
+
+> **Upgrading from 2.x:** the JSON `Map Data` attribute was removed in `3.0.0`. Point a marker layer at the entity your JSON was exported from and rebuild the popup with widgets in `Popup content`.
 
 ## Demo project
 Navigate to the `./test/MapLibreTestApp` directory to access the sample implementation
@@ -39,7 +51,7 @@ If you are interested in contributing improvements or additional mapping capabil
 6. [MapLibre Demo Tiles](https://github.com/maplibre/demotiles)
 7. Swift Package Spec for iOS: `https://github.com/maplibre/maplibre-gl-native-distribution`
 
-> **Note:** Widget `2.0.0` targets Mendix `11.x` and MapLibre React Native `v11`. For Mendix Studio Pro `10.x` (Native Template `v14.x`, MapLibre React Native `v10`), use widget `1.0.0`.
+> **Note:** Widget `3.x` and `2.x` target Mendix `11.x` and MapLibre React Native `v11`. For Mendix Studio Pro `10.x` (Native Template `v14.x`, MapLibre React Native `v10`), use widget `1.0.0`.
 
 ## Native build setup
 1. Use demo Native template embedded in `./test/MapLibreTestApp/resources/nativeTemplate`

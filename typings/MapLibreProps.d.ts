@@ -3,16 +3,53 @@
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix Widgets Framework Team
  */
-import { ActionValue, EditableValue } from "mendix";
+import {
+    ActionValue,
+    DynamicValue,
+    EditableValue,
+    ListActionValue,
+    ListAttributeValue,
+    ListValue,
+    ListWidgetValue,
+    NativeImage
+} from "mendix";
+import { ComponentType, CSSProperties, ReactNode } from "react";
 import { Big } from "big.js";
-import { CSSProperties } from "react";
+
+export type AttributionPositionEnum = "bottomRight" | "bottomLeft" | "topRight" | "topLeft";
+
+export interface MarkerLayersType {
+    markers: ListValue;
+    latitude: ListAttributeValue<Big | string>;
+    longitude: ListAttributeValue<Big | string>;
+    markerIcon?: DynamicValue<NativeImage>;
+    iconSize: number;
+    popupHeader?: ListWidgetValue;
+    popupContent?: ListWidgetValue;
+    onMarkerClick?: ListActionValue;
+}
+
+export interface MarkerLayersPreviewType {
+    markers: {} | { caption: string } | { type: string } | null;
+    latitude: string;
+    longitude: string;
+    markerIcon: { type: "static"; imageUrl: string } | { type: "dynamic"; entity: string } | null;
+    iconSize: number | null;
+    popupHeader: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
+    popupContent: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
+    onMarkerClick: {} | null;
+}
 
 export interface MapLibreProps<Style> {
     name: string;
     style: Style[];
-    mapData?: EditableValue<string | Big>;
     mapStyle?: EditableValue<string>;
-    onClick?: ActionValue;
+    popupVisible?: EditableValue<boolean>;
+    showAttribution: boolean;
+    attributionPosition: AttributionPositionEnum;
+    attributionText?: DynamicValue<string>;
+    tintColor: string;
+    markerLayers: MarkerLayersType[];
     onClose?: ActionValue;
 }
 
@@ -27,8 +64,12 @@ export interface MapLibrePreviewProps {
     readOnly: boolean;
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
-    mapData: string;
     mapStyle: string;
-    onClick: {} | null;
+    popupVisible: string;
+    showAttribution: boolean;
+    attributionPosition: AttributionPositionEnum;
+    attributionText: string;
+    tintColor: string;
+    markerLayers: MarkerLayersPreviewType[];
     onClose: {} | null;
 }

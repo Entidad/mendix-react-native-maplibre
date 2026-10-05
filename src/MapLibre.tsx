@@ -4,30 +4,25 @@ import { MapData } from "./components/MapData";
 import { MapLibreProps } from "../typings/MapLibreProps";
 
 export class MapLibre extends Component<MapLibreProps<any>> {
-    private readonly onClickHandler = this.onClick.bind(this);
     private readonly onCloseHandler = this.onClose.bind(this);
 
     render(): ReactNode {
-        const jsonData = this.props.mapData?.displayValue || "{}";
         const styleUrl = this.props.mapStyle?.displayValue || "https://demotiles.maplibre.org/style.json";
 
         return (
             <MapData
-                style={this.props.style}
-                onClick={this.onClickHandler}
-                mapMarkerDataJson={jsonData}
+                layers={this.props.markerLayers}
                 mapStyle={styleUrl}
+                popupVisible={this.props.popupVisible}
+                attribution={{
+                    showButton: this.props.showAttribution,
+                    position: this.props.attributionPosition,
+                    text: this.props.attributionText?.value || undefined,
+                    tintColor: this.props.tintColor || undefined
+                }}
                 onClose={this.props.onClose ? this.onCloseHandler : undefined}
             />
         );
-    }
-
-    private onClick(): void {
-        const { onClick } = this.props;
-
-        if (onClick && onClick.canExecute && !onClick.isExecuting) {
-            onClick.execute();
-        }
     }
 
     private onClose(): void {

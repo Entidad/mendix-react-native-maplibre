@@ -1,7 +1,7 @@
 {
   "name": "maplibre",
   "widgetName": "MapLibre",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Display maps inside your native app with MapLibre Native (https://maplibre.org/).",
   "copyright": "© Entidad 2026. All Rights Reserved.",
   "author": "Jorge Flores",

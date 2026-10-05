@@ -12,11 +12,15 @@ export interface MapDataStyle {
     container: ViewStyle;
     map: ViewStyle;
     markerIcon: ImageStyle;
+    defaultMarker: ViewStyle;
+    defaultMarkerDot: ViewStyle;
+    popupOverlay: ViewStyle;
+    popupBackdrop: ViewStyle;
     annotationContainer: ViewStyle;
-    annotationTitle: TextStyle;
-    annotationItem: TextStyle;
-    annotationLabel: TextStyle;
-    annotationSource: TextStyle;
+    popupHeader: ViewStyle;
+    popupScroll: ViewStyle;
+    attributionText: ViewStyle;
+    attributionTextLabel: TextStyle;
     closeButton: ViewStyle;
     closeButtonIcon: TextStyle;
 }
@@ -56,38 +60,61 @@ export const mapDataStyles: MapDataStyle = StyleSheet.create({
         height: 32,
         resizeMode: "contain"
     },
+    defaultMarker: {
+        width: 24,
+        height: 24,
+        borderRadius: 12,
+        backgroundColor: "#1C7D77",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    defaultMarkerDot: {
+        width: 12,
+        height: 12,
+        borderRadius: 6,
+        backgroundColor: "#FFFFFF"
+    },
+    popupOverlay: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    popupBackdrop: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: "rgba(0, 0, 0, 0.5)"
+    },
     annotationContainer: {
         backgroundColor: "#FFFFFF",
         borderRadius: 8,
         paddingHorizontal: 12,
         paddingVertical: 8,
-        minWidth: 150,
+        width: "90%",
+        maxWidth: 480,
+        maxHeight: "85%",
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5
     },
-    annotationTitle: {
-        fontSize: 14,
-        fontWeight: "bold",
-        color: "#1C7D77",
-        marginBottom: 8
+    popupHeader: {
+        paddingBottom: 4
     },
-    annotationItem: {
-        fontSize: 12,
-        color: "#333333",
-        marginBottom: 4
+    // Lets the scroll area shrink inside the height-capped card, so the header stays visible.
+    popupScroll: {
+        flexShrink: 1
     },
-    annotationLabel: {
-        fontWeight: "600",
-        color: "#1C7D77"
+    attributionText: {
+        position: "absolute",
+        maxWidth: "70%",
+        backgroundColor: "rgba(255, 255, 255, 0.75)",
+        borderRadius: 4,
+        paddingHorizontal: 6,
+        paddingVertical: 2
     },
-    annotationSource: {
+    attributionTextLabel: {
         fontSize: 10,
-        fontStyle: "italic",
-        color: "#777777",
-        marginTop: 4
+        color: "#333333"
     },
     closeButton: {
         position: "absolute",
