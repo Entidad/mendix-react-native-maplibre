@@ -5,6 +5,7 @@ import { MapLibreProps } from "../typings/MapLibreProps";
 
 export class MapLibre extends Component<MapLibreProps<any>> {
     private readonly onClickHandler = this.onClick.bind(this);
+    private readonly onCloseHandler = this.onClose.bind(this);
 
     render(): ReactNode {
         const jsonData = this.props.mapData?.displayValue || "{}";
@@ -16,6 +17,7 @@ export class MapLibre extends Component<MapLibreProps<any>> {
                 onClick={this.onClickHandler}
                 mapMarkerDataJson={jsonData}
                 mapStyle={styleUrl}
+                onClose={this.props.onClose ? this.onCloseHandler : undefined}
             />
         );
     }
@@ -25,6 +27,14 @@ export class MapLibre extends Component<MapLibreProps<any>> {
 
         if (onClick && onClick.canExecute && !onClick.isExecuting) {
             onClick.execute();
+        }
+    }
+
+    private onClose(): void {
+        const { onClose } = this.props;
+
+        if (onClose && onClose.canExecute && !onClose.isExecuting) {
+            onClose.execute();
         }
     }
 }

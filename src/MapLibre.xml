@@ -34,6 +34,10 @@
                 <caption>On click</caption>
                 <description>Action to trigger when the badge is clicked</description>
             </property>
+            <property key="onClose" type="action" required="false">
+                <caption>On close</caption>
+                <description>Action for the close button in the top left corner, typically "Close page". The button is hidden when no action is set.</description>
+            </property>
         </propertyGroup>
     </properties>
 </widget>

@@ -16,6 +16,9 @@ export interface MapDataStyle {
     annotationTitle: TextStyle;
     annotationItem: TextStyle;
     annotationLabel: TextStyle;
+    annotationSource: TextStyle;
+    closeButton: ViewStyle;
+    closeButtonIcon: TextStyle;
 }
 
 export const defaultBadgeStyle: BadgeStyle = {
@@ -78,6 +81,31 @@ export const mapDataStyles: MapDataStyle = StyleSheet.create({
     },
     annotationLabel: {
         fontWeight: "600",
+        color: "#1C7D77"
+    },
+    annotationSource: {
+        fontSize: 10,
+        fontStyle: "italic",
+        color: "#777777",
+        marginTop: 4
+    },
+    closeButton: {
+        position: "absolute",
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: "#FFFFFF",
+        justifyContent: "center",
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+    },
+    closeButtonIcon: {
+        fontSize: 18,
+        fontWeight: "bold",
         color: "#1C7D77"
     }
 }) as MapDataStyle;

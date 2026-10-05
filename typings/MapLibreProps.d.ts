@@ -13,6 +13,7 @@ export interface MapLibreProps<Style> {
     mapData?: EditableValue<string | Big>;
     mapStyle?: EditableValue<string>;
     onClick?: ActionValue;
+    onClose?: ActionValue;
 }
 
 export interface MapLibrePreviewProps {
@@ -29,4 +30,5 @@ export interface MapLibrePreviewProps {
     mapData: string;
     mapStyle: string;
     onClick: {} | null;
+    onClose: {} | null;
 }
