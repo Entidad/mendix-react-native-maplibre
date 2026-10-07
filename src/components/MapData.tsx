@@ -1,9 +1,20 @@
-import { Component, ReactNode } from "react";
-import { View, Text, Pressable, Modal, Image, ImageSourcePropType, ScrollView } from "react-native";
-import { Map, Marker, Camera } from "@maplibre/maplibre-react-native";
+import { Component, ReactNode, createRef } from "react";
+import { View, Text, Pressable, Modal, Image, ScrollView } from "react-native";
+import {
+    Map,
+    Camera,
+    CameraRef,
+    GeoJSONSource,
+    GeoJSONSourceRef,
+    Layer,
+    Images,
+    ImageEntry,
+    FilterSpecification
+} from "@maplibre/maplibre-react-native";
 import { SafeAreaInsetsContext } from "react-native-safe-area-context";
 import { EditableValue, ObjectItem } from "mendix";
 import { Big } from "big.js";
+import type { Feature, FeatureCollection, Point } from "geojson";
 import { MarkerLayersType } from "../../typings/MapLibreProps";
 import { mapDataStyles as styles } from "../ui/styles";
 
@@ -22,11 +33,83 @@ function toCoordinate(value: Big | string | undefined, limit: number): number | 
 }
 
 // A static image from an image collection resolves to a bundled asset (number); a dynamic
-// image resolves to a URI source. SVG markup (string) is not supported by <Image>.
-function toImageSource(layer: MarkerLayersType): ImageSourcePropType | undefined {
+// image resolves to a URI source. SVG markup (string) can't be used as a map icon.
+function toImageEntry(layer: MarkerLayersType): ImageEntry | undefined {
     const image = layer.markerIcon?.status === "available" ? layer.markerIcon.value : undefined;
-    return typeof image === "number" || (typeof image === "object" && image !== null) ? image : undefined;
+    if (typeof image === "number") {
+        return image;
+    }
+    return typeof image === "object" && image !== null ? { source: image } : undefined;
 }
+
+// Symbol icons are scaled relative to the image's own size; fit its largest side to "Icon size".
+function toIconScale(entry: ImageEntry, iconSize: number): number {
+    const size =
+        typeof entry === "number"
+            ? Image.resolveAssetSource(entry)
+            : typeof entry === "object" && !Array.isArray(entry.source) && typeof entry.source === "object"
+            ? entry.source
+            : undefined;
+    const largestSide = Math.max(size?.width ?? 0, size?.height ?? 0);
+    return largestSide > 0 ? iconSize / largestSide : 1;
+}
+
+interface LayerFeatures {
+    items: ObjectItem[] | undefined;
+    latitude: MarkerLayersType["latitude"];
+    longitude: MarkerLayersType["longitude"];
+    spread: boolean;
+    collection: FeatureCollection<Point>;
+    itemsById: Record<string, ObjectItem>;
+}
+
+const METERS_PER_DEGREE_LAT = 111320;
+// Spacing between markers spread out from a shared coordinate; they separate around zoom 15.
+const SPREAD_METERS = 90;
+const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
+// Never zoom into a cluster further than street level, where many styles have no more detail.
+const MAX_CLUSTER_ZOOM = 16;
+
+// Markers at exactly the same coordinate (e.g. geocoded to the same town) can never be told
+// apart by zooming. Fan them out on a small sunflower spiral around the shared point instead.
+function spreadOverlapping(features: Array<Feature<Point>>): void {
+    const groups: Record<string, Array<Feature<Point>>> = {};
+    for (const feature of features) {
+        const key = feature.geometry.coordinates.join(",");
+        (groups[key] ??= []).push(feature);
+    }
+
+    for (const group of Object.values(groups)) {
+        if (group.length < 2) {
+            continue;
+        }
+        const [lng, lat] = group[0].geometry.coordinates;
+        const metersPerDegreeLng = METERS_PER_DEGREE_LAT * Math.max(Math.cos((lat * Math.PI) / 180), 0.01);
+
+        group.forEach((feature, index) => {
+            const radius = SPREAD_METERS * Math.sqrt(index + 0.5);
+            const angle = index * GOLDEN_ANGLE;
+            feature.geometry.coordinates = [
+                lng + (radius * Math.cos(angle)) / metersPerDegreeLng,
+                lat + (radius * Math.sin(angle)) / METERS_PER_DEGREE_LAT
+            ];
+        });
+    }
+}
+
+const iconImageName = (layerIndex: number): string => `mx-markers-${layerIndex}-icon`;
+
+// Clustered sources mark cluster features with a point_count property.
+const IS_CLUSTER: FilterSpecification = ["has", "point_count"];
+const IS_NOT_CLUSTER: FilterSpecification = ["!", ["has", "point_count"]];
+
+// The default marker when no icon is set: a white dot with a teal ring.
+const DEFAULT_MARKER_PAINT = {
+    "circle-radius": 6,
+    "circle-color": "#FFFFFF",
+    "circle-stroke-width": 6,
+    "circle-stroke-color": "#1C7D77"
+};
 
 type Corner = "bottomRight" | "bottomLeft" | "topRight" | "topLeft";
 
@@ -69,6 +152,8 @@ interface MapDataProps {
     mapStyle?: string;
     popupVisible?: EditableValue<boolean>;
     attribution: AttributionOptions;
+    clusterFont: string;
+    showClusterToggle: boolean;
 }
 
 function hasPopup(layer: MarkerLayersType): boolean {
@@ -77,14 +162,61 @@ function hasPopup(layer: MarkerLayersType): boolean {
 
 interface MapDataState {
     selected: SelectedMarker | null;
+    // Session toggle for layers with "Cluster markers" on; off shows every marker.
+    clustering: boolean;
 }
 
 export class MapData extends Component<MapDataProps, MapDataState> {
+    private readonly layerFeatures: Array<LayerFeatures | undefined> = [];
+    private readonly cameraRef = createRef<CameraRef>();
+    private readonly sourceRefs: Array<GeoJSONSourceRef | null> = [];
+
     constructor(props: MapDataProps) {
         super(props);
         this.state = {
-            selected: null
+            selected: null,
+            clustering: true
         };
+    }
+
+    private readonly toggleClustering = (): void => {
+        this.setState(prevState => ({ clustering: !prevState.clustering }));
+    };
+
+    private renderClusterToggle(): ReactNode {
+        if (!this.props.showClusterToggle || !this.props.layers.some(layer => layer.cluster)) {
+            return null;
+        }
+
+        const { clustering } = this.state;
+
+        return (
+            // Mirrors the close button in the top right corner, below the status bar / notch.
+            <SafeAreaInsetsContext.Consumer>
+                {insets => (
+                    <Pressable
+                        style={[styles.mapButton, { top: (insets?.top ?? 0) + 12, right: (insets?.right ?? 0) + 12 }]}
+                        onPress={this.toggleClustering}
+                        hitSlop={8}
+                        accessibilityRole="button"
+                        accessibilityLabel={clustering ? "Show all markers" : "Group markers"}
+                    >
+                        {/* The icon shows what tapping does: scattered dots ungroup, one bubble groups. */}
+                        {clustering ? (
+                            <View style={styles.scatterIcon}>
+                                <View style={[styles.scatterDot, styles.scatterDotTop]} />
+                                <View style={[styles.scatterDot, styles.scatterDotLeft]} />
+                                <View style={[styles.scatterDot, styles.scatterDotRight]} />
+                            </View>
+                        ) : (
+                            <View style={styles.clusterIcon}>
+                                <View style={styles.clusterIconCore} />
+                            </View>
+                        )}
+                    </Pressable>
+                )}
+            </SafeAreaInsetsContext.Consumer>
+        );
     }
 
     private handleMarkerPress(layerIndex: number, item: ObjectItem): void {
@@ -121,32 +253,176 @@ export class MapData extends Component<MapDataProps, MapDataState> {
         return popupVisible?.status === "available" && !popupVisible.readOnly && popupVisible.value === false;
     }
 
-    private renderLayerMarkers(layer: MarkerLayersType, layerIndex: number): ReactNode[] {
-        const iconSource = toImageSource(layer);
-        const iconStyle = { width: layer.iconSize, height: layer.iconSize };
+    // Rebuilds a layer's GeoJSON only when its data changes, so opening a popup doesn't
+    // resend every marker to the native map.
+    private getLayerFeatures(layer: MarkerLayersType, layerIndex: number): LayerFeatures {
+        const cached = this.layerFeatures[layerIndex];
+        if (
+            cached &&
+            cached.items === layer.markers.items &&
+            cached.latitude === layer.latitude &&
+            cached.longitude === layer.longitude &&
+            cached.spread === layer.spreadOverlapping
+        ) {
+            return cached;
+        }
 
-        return (layer.markers.items ?? []).map(item => {
+        const features: Array<Feature<Point>> = [];
+        const itemsById: Record<string, ObjectItem> = {};
+
+        for (const item of layer.markers.items ?? []) {
             const lat = toCoordinate(layer.latitude.get(item).value, 90);
             const lng = toCoordinate(layer.longitude.get(item).value, 180);
 
-            if (lat === undefined || lng === undefined) {
-                return null;
+            if (lat !== undefined && lng !== undefined) {
+                itemsById[item.id] = item;
+                features.push({
+                    type: "Feature",
+                    geometry: { type: "Point", coordinates: [lng, lat] },
+                    properties: { itemId: item.id }
+                });
             }
+        }
 
-            return (
-                <Marker key={`${layerIndex}-${item.id}`} lngLat={[lng, lat]}>
-                    <Pressable onPress={() => this.handleMarkerPress(layerIndex, item)}>
-                        {iconSource ? (
-                            <Image source={iconSource} style={[styles.markerIcon, iconStyle]} />
-                        ) : (
-                            <View style={styles.defaultMarker}>
-                                <View style={styles.defaultMarkerDot} />
-                            </View>
-                        )}
-                    </Pressable>
-                </Marker>
-            );
+        if (layer.spreadOverlapping) {
+            spreadOverlapping(features);
+        }
+
+        const result: LayerFeatures = {
+            items: layer.markers.items,
+            latitude: layer.latitude,
+            longitude: layer.longitude,
+            spread: layer.spreadOverlapping,
+            collection: { type: "FeatureCollection", features },
+            itemsById
+        };
+        this.layerFeatures[layerIndex] = result;
+        return result;
+    }
+
+    // Zooms in just far enough for the tapped cluster to break apart.
+    private async zoomIntoCluster(layerIndex: number, cluster: Feature): Promise<void> {
+        const source = this.sourceRefs[layerIndex];
+        const clusterId = Number(cluster.properties?.cluster_id);
+
+        if (!source || cluster.geometry.type !== "Point" || !Number.isFinite(clusterId)) {
+            return;
+        }
+
+        try {
+            const zoom = await source.getClusterExpansionZoom(clusterId);
+            const [lng, lat] = cluster.geometry.coordinates;
+            this.cameraRef.current?.easeTo({
+                center: [lng, lat],
+                zoom: Math.min(zoom, MAX_CLUSTER_ZOOM),
+                duration: 500
+            });
+        } catch (error) {
+            console.warn("Failed to expand map marker cluster:", error);
+        }
+    }
+
+    private handleFeaturePress(layerIndex: number, features: Feature[], data: LayerFeatures): void {
+        if (features[0]?.properties?.cluster) {
+            this.zoomIntoCluster(layerIndex, features[0]);
+            return;
+        }
+
+        const itemId = features[0]?.properties?.itemId;
+        const item = typeof itemId === "string" ? data.itemsById[itemId] : undefined;
+
+        if (item) {
+            this.handleMarkerPress(layerIndex, item);
+        }
+    }
+
+    private renderMarkerLayer(layer: MarkerLayersType, layerIndex: number, iconEntry?: ImageEntry): ReactNode {
+        const data = this.getLayerFeatures(layer, layerIndex);
+        const clustered = layer.cluster && this.state.clustering;
+        // A native source can't switch clustering after creation, so each mode gets its own source id.
+        const id = `mx-markers-${layerIndex}${clustered ? "-clustered" : ""}`;
+        const markerFilter = clustered ? IS_NOT_CLUSTER : undefined;
+
+        return (
+            <GeoJSONSource
+                key={id}
+                id={id}
+                ref={source => {
+                    this.sourceRefs[layerIndex] = source;
+                }}
+                data={data.collection}
+                cluster={clustered}
+                clusterRadius={layer.clusterRadius}
+                onPress={event => this.handleFeaturePress(layerIndex, event.nativeEvent.features, data)}
+            >
+                {clustered && (
+                    <Layer
+                        type="circle"
+                        id={`${id}-clusters`}
+                        filter={IS_CLUSTER}
+                        paint={{
+                            "circle-color": layer.clusterColor || "#1C7D77",
+                            // Bubbles grow with the number of markers they hold.
+                            "circle-radius": ["step", ["get", "point_count"], 16, 10, 20, 50, 26],
+                            "circle-stroke-width": 2,
+                            "circle-stroke-color": "#FFFFFF"
+                        }}
+                    />
+                )}
+                {clustered && (
+                    <Layer
+                        type="symbol"
+                        id={`${id}-cluster-counts`}
+                        filter={IS_CLUSTER}
+                        layout={{
+                            "text-field": ["get", "point_count_abbreviated"],
+                            "text-font": [this.props.clusterFont],
+                            "text-size": 13,
+                            "text-allow-overlap": true,
+                            "text-ignore-placement": true
+                        }}
+                        paint={{ "text-color": "#FFFFFF" }}
+                    />
+                )}
+                {iconEntry ? (
+                    <Layer
+                        type="symbol"
+                        id={`${id}-icons`}
+                        filter={markerFilter}
+                        layout={{
+                            "icon-image": iconImageName(layerIndex),
+                            "icon-size": toIconScale(iconEntry, layer.iconSize),
+                            "icon-anchor": layer.iconAnchor,
+                            // Show every marker, like the previous view-based markers did.
+                            "icon-allow-overlap": true,
+                            "icon-ignore-placement": true
+                        }}
+                    />
+                ) : (
+                    <Layer type="circle" id={`${id}-dots`} filter={markerFilter} paint={DEFAULT_MARKER_PAINT} />
+                )}
+            </GeoJSONSource>
+        );
+    }
+
+    private renderMarkerLayers(): ReactNode {
+        const iconEntries = this.props.layers.map(toImageEntry);
+        const images: Record<string, ImageEntry> = {};
+
+        iconEntries.forEach((entry, layerIndex) => {
+            if (entry) {
+                images[iconImageName(layerIndex)] = entry;
+            }
         });
+
+        return (
+            <>
+                {Object.keys(images).length > 0 && <Images images={images} />}
+                {this.props.layers.map((layer, layerIndex) =>
+                    this.renderMarkerLayer(layer, layerIndex, iconEntries[layerIndex])
+                )}
+            </>
+        );
     }
 
     private renderPopup(): ReactNode {
@@ -171,7 +447,12 @@ export class MapData extends Component<MapDataProps, MapDataState> {
                     <View style={styles.annotationContainer}>
                         {layer.popupHeader && <View style={styles.popupHeader}>{layer.popupHeader.get(item)}</View>}
                         {layer.popupContent && (
-                            <ScrollView style={styles.popupScroll} bounces={false} keyboardShouldPersistTaps="handled">
+                            <ScrollView
+                                style={styles.popupScroll}
+                                contentContainerStyle={styles.popupScrollContent}
+                                bounces={false}
+                                keyboardShouldPersistTaps="handled"
+                            >
                                 {layer.popupContent.get(item)}
                             </ScrollView>
                         )}
@@ -215,17 +496,18 @@ export class MapData extends Component<MapDataProps, MapDataState> {
                     attributionPosition={cornerPosition(attribution.position, ORNAMENT_MARGIN)}
                     tintColor={attribution.tintColor}
                 >
-                    <Camera initialViewState={{ center: [-119.126, 34.3575], zoom: 5 }} />
-                    {this.props.layers.flatMap((layer, layerIndex) => this.renderLayerMarkers(layer, layerIndex))}
+                    <Camera ref={this.cameraRef} initialViewState={{ center: [-119.126, 34.3575], zoom: 5 }} />
+                    {this.renderMarkerLayers()}
                 </Map>
                 {this.renderAttributionText()}
+                {this.renderClusterToggle()}
                 {this.props.onClose && (
                     // Full-page layouts have no header, so offset the button below the status bar / notch.
                     <SafeAreaInsetsContext.Consumer>
                         {insets => (
                             <Pressable
                                 style={[
-                                    styles.closeButton,
+                                    styles.mapButton,
                                     { top: (insets?.top ?? 0) + 12, left: (insets?.left ?? 0) + 12 }
                                 ]}
                                 onPress={this.props.onClose}

@@ -1,4 +1,4 @@
-import { TextStyle, ViewStyle, ImageStyle, StyleSheet } from "react-native";
+import { TextStyle, ViewStyle, StyleSheet } from "react-native";
 
 import { Style } from "@mendix/pluggable-widgets-tools";
 
@@ -11,19 +11,26 @@ export interface BadgeStyle extends Style {
 export interface MapDataStyle {
     container: ViewStyle;
     map: ViewStyle;
-    markerIcon: ImageStyle;
-    defaultMarker: ViewStyle;
-    defaultMarkerDot: ViewStyle;
     popupOverlay: ViewStyle;
     popupBackdrop: ViewStyle;
     annotationContainer: ViewStyle;
     popupHeader: ViewStyle;
     popupScroll: ViewStyle;
+    popupScrollContent: ViewStyle;
     attributionText: ViewStyle;
     attributionTextLabel: TextStyle;
-    closeButton: ViewStyle;
+    mapButton: ViewStyle;
     closeButtonIcon: TextStyle;
+    scatterIcon: ViewStyle;
+    scatterDot: ViewStyle;
+    scatterDotTop: ViewStyle;
+    scatterDotLeft: ViewStyle;
+    scatterDotRight: ViewStyle;
+    clusterIcon: ViewStyle;
+    clusterIconCore: ViewStyle;
 }
+
+const ICON_COLOR = "#1C7D77";
 
 export const defaultBadgeStyle: BadgeStyle = {
     container: {
@@ -55,25 +62,6 @@ export const mapDataStyles: MapDataStyle = StyleSheet.create({
     map: {
         flex: 1
     },
-    markerIcon: {
-        width: 32,
-        height: 32,
-        resizeMode: "contain"
-    },
-    defaultMarker: {
-        width: 24,
-        height: 24,
-        borderRadius: 12,
-        backgroundColor: "#1C7D77",
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    defaultMarkerDot: {
-        width: 12,
-        height: 12,
-        borderRadius: 6,
-        backgroundColor: "#FFFFFF"
-    },
     popupOverlay: {
         flex: 1,
         justifyContent: "center",
@@ -86,7 +74,8 @@ export const mapDataStyles: MapDataStyle = StyleSheet.create({
     annotationContainer: {
         backgroundColor: "#FFFFFF",
         borderRadius: 8,
-        paddingHorizontal: 12,
+        // Horizontal padding lives on the header and scroll content instead, so the scroll
+        // view spans the full card width and its scroll bar sits against the card's edge.
         paddingVertical: 8,
         width: "90%",
         maxWidth: 480,
@@ -98,11 +87,15 @@ export const mapDataStyles: MapDataStyle = StyleSheet.create({
         elevation: 5
     },
     popupHeader: {
+        paddingHorizontal: 12,
         paddingBottom: 4
     },
     // Lets the scroll area shrink inside the height-capped card, so the header stays visible.
     popupScroll: {
         flexShrink: 1
+    },
+    popupScrollContent: {
+        paddingHorizontal: 12
     },
     attributionText: {
         position: "absolute",
@@ -116,7 +109,8 @@ export const mapDataStyles: MapDataStyle = StyleSheet.create({
         fontSize: 10,
         color: "#333333"
     },
-    closeButton: {
+    // Round floating button shared by the close and clustering toggle buttons.
+    mapButton: {
         position: "absolute",
         width: 40,
         height: 40,
@@ -133,6 +127,46 @@ export const mapDataStyles: MapDataStyle = StyleSheet.create({
     closeButtonIcon: {
         fontSize: 18,
         fontWeight: "bold",
-        color: "#1C7D77"
+        color: ICON_COLOR
+    },
+    // "Show all markers": three separate dots.
+    scatterIcon: {
+        width: 22,
+        height: 20
+    },
+    scatterDot: {
+        position: "absolute",
+        width: 8,
+        height: 8,
+        borderRadius: 4,
+        backgroundColor: ICON_COLOR
+    },
+    scatterDotTop: {
+        top: 0,
+        left: 7
+    },
+    scatterDotLeft: {
+        bottom: 0,
+        left: 0
+    },
+    scatterDotRight: {
+        bottom: 0,
+        right: 0
+    },
+    // "Group markers": a single cluster bubble with a ring.
+    clusterIcon: {
+        width: 22,
+        height: 22,
+        borderRadius: 11,
+        borderWidth: 2,
+        borderColor: ICON_COLOR,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    clusterIconCore: {
+        width: 12,
+        height: 12,
+        borderRadius: 6,
+        backgroundColor: ICON_COLOR
     }
 }) as MapDataStyle;

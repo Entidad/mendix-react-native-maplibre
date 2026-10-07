@@ -14,6 +14,8 @@ export class MapLibre extends Component<MapLibreProps<any>> {
                 layers={this.props.markerLayers}
                 mapStyle={styleUrl}
                 popupVisible={this.props.popupVisible}
+                clusterFont={this.props.clusterFont || "Noto Sans Bold"}
+                showClusterToggle={this.props.showClusterToggle}
                 attribution={{
                     showButton: this.props.showAttribution,
                     position: this.props.attributionPosition,

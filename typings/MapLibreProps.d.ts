@@ -18,12 +18,19 @@ import { Big } from "big.js";
 
 export type AttributionPositionEnum = "bottomRight" | "bottomLeft" | "topRight" | "topLeft";
 
+export type IconAnchorEnum = "bottom" | "center";
+
 export interface MarkerLayersType {
     markers: ListValue;
     latitude: ListAttributeValue<Big | string>;
     longitude: ListAttributeValue<Big | string>;
     markerIcon?: DynamicValue<NativeImage>;
     iconSize: number;
+    iconAnchor: IconAnchorEnum;
+    cluster: boolean;
+    clusterRadius: number;
+    clusterColor: string;
+    spreadOverlapping: boolean;
     popupHeader?: ListWidgetValue;
     popupContent?: ListWidgetValue;
     onMarkerClick?: ListActionValue;
@@ -35,6 +42,11 @@ export interface MarkerLayersPreviewType {
     longitude: string;
     markerIcon: { type: "static"; imageUrl: string } | { type: "dynamic"; entity: string } | null;
     iconSize: number | null;
+    iconAnchor: IconAnchorEnum;
+    cluster: boolean;
+    clusterRadius: number | null;
+    clusterColor: string;
+    spreadOverlapping: boolean;
     popupHeader: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
     popupContent: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
     onMarkerClick: {} | null;
@@ -44,6 +56,8 @@ export interface MapLibreProps<Style> {
     name: string;
     style: Style[];
     mapStyle?: EditableValue<string>;
+    clusterFont: string;
+    showClusterToggle: boolean;
     popupVisible?: EditableValue<boolean>;
     showAttribution: boolean;
     attributionPosition: AttributionPositionEnum;
@@ -65,6 +79,8 @@ export interface MapLibrePreviewProps {
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
     mapStyle: string;
+    clusterFont: string;
+    showClusterToggle: boolean;
     popupVisible: string;
     showAttribution: boolean;
     attributionPosition: AttributionPositionEnum;

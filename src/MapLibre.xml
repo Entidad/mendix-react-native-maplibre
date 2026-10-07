@@ -18,6 +18,14 @@
                         <attributeType name="String" />
                     </attributeTypes>
                 </property>
+                <property key="clusterFont" type="string" defaultValue="Noto Sans Bold">
+                    <caption>Cluster label font</caption>
+                    <description>Font for cluster counts. Must be a font served by the map style's glyphs, e.g. "Noto Sans Bold" for MapTiler or "Open Sans Semibold" for the MapLibre demo tiles.</description>
+                </property>
+                <property key="showClusterToggle" type="boolean" defaultValue="true">
+                    <caption>Show clustering toggle</caption>
+                    <description>Shows a button in the top right corner to switch between grouped (clustered) and all markers. Only shown when a marker layer has clustering on.</description>
+                </property>
             </propertyGroup>
             <propertyGroup caption="Popup">
                 <property key="popupVisible" type="attribute" required="false">
@@ -93,7 +101,33 @@
                                 </property>
                                 <property key="iconSize" type="integer" defaultValue="32">
                                     <caption>Icon size</caption>
-                                    <description>Width and height of the icon, in points.</description>
+                                    <description>Size of the icon's largest side, in points.</description>
+                                </property>
+                                <property key="iconAnchor" type="enumeration" defaultValue="bottom">
+                                    <caption>Icon anchor</caption>
+                                    <description>Which part of the icon sits on the coordinate. Use Bottom for pin-shaped icons, Center for round ones.</description>
+                                    <enumerationValues>
+                                        <enumerationValue key="bottom">Bottom</enumerationValue>
+                                        <enumerationValue key="center">Center</enumerationValue>
+                                    </enumerationValues>
+                                </property>
+                            </propertyGroup>
+                            <propertyGroup caption="Clustering">
+                                <property key="cluster" type="boolean" defaultValue="false">
+                                    <caption>Cluster markers</caption>
+                                    <description>Groups nearby markers into a bubble showing their count. Tapping a bubble zooms in until it splits.</description>
+                                </property>
+                                <property key="clusterRadius" type="integer" defaultValue="50">
+                                    <caption>Cluster radius</caption>
+                                    <description>How close markers must be to merge, in points. Larger values make fewer, bigger clusters.</description>
+                                </property>
+                                <property key="clusterColor" type="string" defaultValue="#1C7D77">
+                                    <caption>Cluster color</caption>
+                                    <description>Bubble color, e.g. match it to this layer's icon.</description>
+                                </property>
+                                <property key="spreadOverlapping" type="boolean" defaultValue="true">
+                                    <caption>Spread markers at the same location</caption>
+                                    <description>Markers with exactly the same coordinates are fanned out in a small circle (about 100-200 m) so each can be seen and tapped. Turn off when exact positions matter more.</description>
                                 </property>
                             </propertyGroup>
                         </propertyGroup>
