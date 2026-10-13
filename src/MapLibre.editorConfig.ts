@@ -99,33 +99,88 @@ export type PreviewProps =
     | SelectableProps
     | DatasourceProps;
 
+function hasCustomLegend(values: MapLibrePreviewProps): boolean {
+    return values.legendHeader.widgetCount > 0 || values.legendContent.widgetCount > 0;
+}
+
+// Removes widget-level properties by key, wherever they sit in the (nested) property groups.
+function hideProperties(groups: PropertyGroup[], keys: string[]): void {
+    for (const group of groups) {
+        group.properties = group.properties?.filter(property => !keys.includes(property.key));
+        if (group.propertyGroups) {
+            hideProperties(group.propertyGroups, keys);
+        }
+    }
+}
+
 export function getProperties(
-    _values: MapLibrePreviewProps,
+    values: MapLibrePreviewProps,
     defaultProperties: Properties /* , target: Platform*/
 ): Properties {
-    // Do the values manipulation here to control the visibility of properties in Studio and Studio Pro conditionally.
-    /* Example
-    if (values.myProperty === "custom") {
-        delete defaultProperties.properties.myOtherProperty;
+    if (!values.showLegend) {
+        hideProperties(defaultProperties, [
+            "legendInitiallyOpen",
+            "legendTitle",
+            "legendHeader",
+            "legendContent",
+            "legendVisible",
+            "legendShowCounts",
+            "legendToggleLayers"
+        ]);
+    } else if (hasCustomLegend(values)) {
+        // These only apply to the generated legend.
+        hideProperties(defaultProperties, ["legendTitle", "legendShowCounts", "legendToggleLayers"]);
     }
-    */
+    if (!values.showSearch) {
+        hideProperties(defaultProperties, ["searchPlaceholder", "searchNoResults"]);
+    }
     return defaultProperties;
 }
 
-// export function check(_values: MapLibrePreviewProps): Problem[] {
-//     const errors: Problem[] = [];
-//     // Add errors to the above array to throw errors in Studio and Studio Pro.
-//     /* Example
-//     if (values.myProperty !== "custom") {
-//         errors.push({
-//             property: `myProperty`,
-//             message: `The value of 'myProperty' is different of 'custom'.`,
-//             url: "https://github.com/myrepo/mywidget"
-//         });
-//     }
-//     */
-//     return errors;
-// }
+export function check(values: MapLibrePreviewProps): Problem[] {
+    const problems: Problem[] = [];
+
+    if (values.defaultLatitude !== null && Math.abs(values.defaultLatitude) > 90) {
+        problems.push({ property: "defaultLatitude", message: "Default latitude must be between -90 and 90." });
+    }
+    if (values.defaultLongitude !== null && Math.abs(values.defaultLongitude) > 180) {
+        problems.push({ property: "defaultLongitude", message: "Default longitude must be between -180 and 180." });
+    }
+    if (values.defaultZoom !== null && (values.defaultZoom < 0 || values.defaultZoom > 22)) {
+        problems.push({ property: "defaultZoom", message: "Default zoom must be between 0 and 22." });
+    }
+
+    if (!!values.locationLatitude !== !!values.locationLongitude) {
+        problems.push({
+            property: values.locationLatitude ? "locationLongitude" : "locationLatitude",
+            message: "Set both Location latitude and Location longitude, or neither."
+        });
+    }
+    if (values.onLocationClick && !values.locationLatitude && !values.locationLongitude) {
+        problems.push({
+            property: "locationLatitude",
+            severity: "warning",
+            message:
+                "The location button can't center the map without Location latitude and longitude attributes for its action to fill."
+        });
+    }
+    if (values.showLegend && !hasCustomLegend(values) && !values.markerLayers.some(layer => layer.legendLabel)) {
+        problems.push({
+            property: "showLegend",
+            severity: "warning",
+            message:
+                "The legend is hidden until it has Legend header or content widgets, or a marker layer has a Legend label."
+        });
+    }
+    if (values.showSearch && !values.markerLayers.some(layer => layer.searchText)) {
+        problems.push({
+            property: "showSearch",
+            severity: "warning",
+            message: "The search button is hidden until a marker layer has a Search text."
+        });
+    }
+    return problems;
+}
 
 // export function getPreview(values: MapLibrePreviewProps, isDarkMode: boolean, version: number[]): PreviewProps {
 //     // Customize your pluggable widget appearance for Studio Pro.

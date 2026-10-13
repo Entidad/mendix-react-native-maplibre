@@ -18,6 +18,18 @@
                         <attributeType name="String" />
                     </attributeTypes>
                 </property>
+                <property key="defaultLatitude" type="decimal" defaultValue="34.3575">
+                    <caption>Default latitude</caption>
+                    <description>Latitude the map opens on when no location is set (see Controls > Location), from -90.0 to 90.0.</description>
+                </property>
+                <property key="defaultLongitude" type="decimal" defaultValue="-119.126">
+                    <caption>Default longitude</caption>
+                    <description>Longitude the map opens on when no location is set, from -180.0 to 180.0.</description>
+                </property>
+                <property key="defaultZoom" type="decimal" defaultValue="5">
+                    <caption>Default zoom</caption>
+                    <description>Zoom level the map opens at when no location is set, from 0 (world) to 20 (building). 5 shows a large region.</description>
+                </property>
                 <property key="clusterFont" type="string" defaultValue="Noto Sans Bold">
                     <caption>Cluster label font</caption>
                     <description>Font for cluster counts. Must be a font served by the map style's glyphs, e.g. "Noto Sans Bold" for MapTiler or "Open Sans Semibold" for the MapLibre demo tiles.</description>
@@ -30,7 +42,7 @@
             <propertyGroup caption="Popup">
                 <property key="popupVisible" type="attribute" required="false">
                     <caption>Popup visible</caption>
-                    <description>Optional Boolean attribute kept in sync with the marker popup: set to true when a marker is tapped, and the popup closes when it is set to false. Use it to close the popup from a button inside the popup content.</description>
+                    <description>Optional Boolean attribute to close the marker popup from your own button. The widget sets it to true when a marker is tapped; set it to false, e.g. in the button's nanoflow, to close the popup.</description>
                     <attributeTypes>
                         <attributeType name="Boolean" />
                     </attributeTypes>
@@ -92,8 +104,36 @@
                                     </attributeTypes>
                                 </property>
                             </propertyGroup>
+                            <propertyGroup caption="Visibility">
+                                <property key="visible" type="expression" defaultValue="true" required="false">
+                                    <caption>Visible</caption>
+                                    <description>Whether this layer's markers are shown, evaluated on the page's context object, e.g. $currentObject/ShowLocalJobs. Bind a check box or switch in the legend content to the same attribute to let users pick layers. When empty, the layer is visible.</description>
+                                    <returnType type="Boolean" />
+                                </property>
+                                <property key="markerCount" type="attribute" required="false">
+                                    <caption>Marker count</caption>
+                                    <description>Optional attribute of the page's context object that the widget sets to this layer's number of markers, after search filtering. Use it to show counts in the legend content. Markers without a valid coordinate aren't counted.</description>
+                                    <attributeTypes>
+                                        <attributeType name="Integer" />
+                                        <attributeType name="Long" />
+                                    </attributeTypes>
+                                </property>
+                            </propertyGroup>
+                            <propertyGroup caption="Search">
+                                <property key="searchText" type="expression" dataSource="markers" required="false">
+                                    <caption>Search text</caption>
+                                    <description>Text the search matches against, also shown in the search results, e.g. $currentObject/Name + ' ' + $currentObject/City. When empty, this layer is not searchable and stays visible while searching.</description>
+                                    <returnType type="String" />
+                                </property>
+                            </propertyGroup>
                         </propertyGroup>
                         <propertyGroup caption="Appearance">
+                            <propertyGroup caption="Legend">
+                                <property key="legendLabel" type="textTemplate" required="false">
+                                    <caption>Legend label</caption>
+                                    <description>Name of this layer in the generated legend, shown next to its icon, and below its search results. When empty, the layer is left out of the generated legend.</description>
+                                </property>
+                            </propertyGroup>
                             <propertyGroup caption="Icon">
                                 <property key="markerIcon" type="image" required="false">
                                     <caption>Icon</caption>
@@ -152,6 +192,104 @@
                             </propertyGroup>
                         </propertyGroup>
                     </properties>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Controls">
+            <propertyGroup caption="Buttons">
+                <property key="buttonColor" type="string" defaultValue="#1C7D77">
+                    <caption>Button color</caption>
+                    <description>Color of the icons on the map's buttons (close, search, legend, clustering and location), e.g. #1C7D77.</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Location">
+                <property key="onLocationClick" type="action" required="false">
+                    <caption>On location click</caption>
+                    <description>Action for the location button, typically a nanoflow that calls GetCurrentLocationMinimumAccuracy and stores the result in the location attributes below. The button is hidden when no action is set.</description>
+                </property>
+                <property key="locationLatitude" type="attribute" required="false">
+                    <caption>Location latitude</caption>
+                    <description>Attribute of the context object holding the user's latitude. The map opens centered on this location when it is set, and centers on it again when it changes or when the location action finishes. A location dot is shown there. Latitude and longitude both 0 (the default of numeric attributes) count as no location, so the map opens on the default view.</description>
+                    <attributeTypes>
+                        <attributeType name="Decimal" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Long" />
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="locationLongitude" type="attribute" required="false">
+                    <caption>Location longitude</caption>
+                    <description>Attribute of the context object holding the user's longitude.</description>
+                    <attributeTypes>
+                        <attributeType name="Decimal" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Long" />
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="locationZoom" type="integer" defaultValue="14">
+                    <caption>Location zoom</caption>
+                    <description>Zoom level used when opening on or centering on the location, from 0 (world) to 20 (building). 14 shows a neighborhood.</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Legend">
+                <property key="showLegend" type="boolean" defaultValue="false">
+                    <caption>Show legend</caption>
+                    <description>Shows a button that opens a legend with each marker layer that has a legend label.</description>
+                </property>
+                <property key="legendInitiallyOpen" type="boolean" defaultValue="false">
+                    <caption>Open legend on start</caption>
+                    <description>Shows the legend when the map opens, instead of only after tapping the button.</description>
+                </property>
+                <property key="legendTitle" type="textTemplate" required="false">
+                    <caption>Legend title</caption>
+                    <description>Heading of the legend panel.</description>
+                    <translations>
+                        <translation lang="en_US">Legend</translation>
+                    </translations>
+                </property>
+                <property key="legendHeader" type="widgets" required="false">
+                    <caption>Legend header</caption>
+                    <description>Optional content pinned to the top of a custom legend, e.g. a title and close button. It stays in place while the legend content scrolls.</description>
+                </property>
+                <property key="legendContent" type="widgets" required="false">
+                    <caption>Legend content</caption>
+                    <description>Optional content for a custom legend, shown in a popup like the marker popup; it scrolls when taller than the screen. When both header and content are empty, a legend is generated from the layers' legend labels and icons.</description>
+                </property>
+                <property key="legendVisible" type="attribute" required="false">
+                    <caption>Legend visible</caption>
+                    <description>Optional Boolean attribute to close a custom legend from your own button. The widget sets it to true when the legend opens; set it to false, e.g. in the button's nanoflow, to close the legend.</description>
+                    <attributeTypes>
+                        <attributeType name="Boolean" />
+                    </attributeTypes>
+                </property>
+                <property key="legendShowCounts" type="boolean" defaultValue="true">
+                    <caption>Show marker counts</caption>
+                    <description>Shows how many markers each layer has on the map, after search filtering.</description>
+                </property>
+                <property key="legendToggleLayers" type="boolean" defaultValue="true">
+                    <caption>Toggle layers from legend</caption>
+                    <description>Tapping a layer in the legend hides or shows its markers.</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Search">
+                <property key="showSearch" type="boolean" defaultValue="false">
+                    <caption>Show search</caption>
+                    <description>Shows a search button that filters the markers of layers with a search text. Only shown when a layer has a search text.</description>
+                </property>
+                <property key="searchPlaceholder" type="textTemplate" required="false">
+                    <caption>Search placeholder</caption>
+                    <description>Hint shown in the empty search field.</description>
+                    <translations>
+                        <translation lang="en_US">Search markers</translation>
+                    </translations>
+                </property>
+                <property key="searchNoResults" type="textTemplate" required="false">
+                    <caption>No results text</caption>
+                    <description>Shown when no marker matches the search.</description>
+                    <translations>
+                        <translation lang="en_US">No matching markers</translation>
+                    </translations>
                 </property>
             </propertyGroup>
         </propertyGroup>

@@ -9,6 +9,7 @@ import {
     EditableValue,
     ListActionValue,
     ListAttributeValue,
+    ListExpressionValue,
     ListValue,
     ListWidgetValue,
     NativeImage
@@ -24,6 +25,10 @@ export interface MarkerLayersType {
     markers: ListValue;
     latitude: ListAttributeValue<Big | string>;
     longitude: ListAttributeValue<Big | string>;
+    visible?: DynamicValue<boolean>;
+    markerCount?: EditableValue<Big>;
+    searchText?: ListExpressionValue<string>;
+    legendLabel?: DynamicValue<string>;
     markerIcon?: DynamicValue<NativeImage>;
     iconSize: number;
     iconAnchor: IconAnchorEnum;
@@ -40,6 +45,10 @@ export interface MarkerLayersPreviewType {
     markers: {} | { caption: string } | { type: string } | null;
     latitude: string;
     longitude: string;
+    visible: string;
+    markerCount: string;
+    searchText: string;
+    legendLabel: string;
     markerIcon: { type: "static"; imageUrl: string } | { type: "dynamic"; entity: string } | null;
     iconSize: number | null;
     iconAnchor: IconAnchorEnum;
@@ -56,6 +65,9 @@ export interface MapLibreProps<Style> {
     name: string;
     style: Style[];
     mapStyle?: EditableValue<string>;
+    defaultLatitude: Big;
+    defaultLongitude: Big;
+    defaultZoom: Big;
     clusterFont: string;
     showClusterToggle: boolean;
     popupVisible?: EditableValue<boolean>;
@@ -64,6 +76,22 @@ export interface MapLibreProps<Style> {
     attributionText?: DynamicValue<string>;
     tintColor: string;
     markerLayers: MarkerLayersType[];
+    buttonColor: string;
+    onLocationClick?: ActionValue;
+    locationLatitude?: EditableValue<Big | string>;
+    locationLongitude?: EditableValue<Big | string>;
+    locationZoom: number;
+    showLegend: boolean;
+    legendInitiallyOpen: boolean;
+    legendTitle?: DynamicValue<string>;
+    legendHeader?: ReactNode;
+    legendContent?: ReactNode;
+    legendVisible?: EditableValue<boolean>;
+    legendShowCounts: boolean;
+    legendToggleLayers: boolean;
+    showSearch: boolean;
+    searchPlaceholder?: DynamicValue<string>;
+    searchNoResults?: DynamicValue<string>;
     onClose?: ActionValue;
 }
 
@@ -79,6 +107,9 @@ export interface MapLibrePreviewProps {
     renderMode: "design" | "xray" | "structure";
     translate: (text: string) => string;
     mapStyle: string;
+    defaultLatitude: number | null;
+    defaultLongitude: number | null;
+    defaultZoom: number | null;
     clusterFont: string;
     showClusterToggle: boolean;
     popupVisible: string;
@@ -87,5 +118,21 @@ export interface MapLibrePreviewProps {
     attributionText: string;
     tintColor: string;
     markerLayers: MarkerLayersPreviewType[];
+    buttonColor: string;
+    onLocationClick: {} | null;
+    locationLatitude: string;
+    locationLongitude: string;
+    locationZoom: number | null;
+    showLegend: boolean;
+    legendInitiallyOpen: boolean;
+    legendTitle: string;
+    legendHeader: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
+    legendContent: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
+    legendVisible: string;
+    legendShowCounts: boolean;
+    legendToggleLayers: boolean;
+    showSearch: boolean;
+    searchPlaceholder: string;
+    searchNoResults: string;
     onClose: {} | null;
 }
