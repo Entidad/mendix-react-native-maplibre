@@ -68,6 +68,9 @@ public class MapMarker implements com.mendix.systemwideinterfaces.core.IEntityPr
 	 */
 	public static nativemaplibre.proxies.MapMarker initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
+		if (mendixObject.isInstanceOf("NativeMobile.AgMarker")) {
+			return nativemobile.proxies.AgMarker.initialize(context, mendixObject);
+		}
 		return new nativemaplibre.proxies.MapMarker(context, mendixObject);
 	}
 
@@ -77,7 +80,7 @@ public class MapMarker implements com.mendix.systemwideinterfaces.core.IEntityPr
 		return nativemaplibre.proxies.MapMarker.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<nativemaplibre.proxies.MapMarker> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
+	public static java.util.List<? extends nativemaplibre.proxies.MapMarker> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
 			.execute(context)
