@@ -137,6 +137,8 @@ const RESULT_ZOOM = 16;
 const SEARCH_DEBOUNCE_MS = 250;
 const BUTTON_SIZE = 40;
 const BUTTON_MARGIN = 12;
+// Matches the search bar's height in the stylesheet.
+const SEARCH_BAR_HEIGHT = 44;
 
 // Markers at exactly the same coordinate (e.g. geocoded to the same town) can never be told
 // apart by zooming. Fan them out on a small sunflower spiral around the shared point instead.
@@ -423,6 +425,10 @@ export class MapData extends Component<MapDataProps, MapDataState> {
     private readonly toggleLegend = (): void => {
         const { legend } = this.props;
 
+        // The search results and keyboard would cover the legend.
+        Keyboard.dismiss();
+        this.setState({ searchResultsVisible: false });
+
         // The custom legend covers its button, so the button only ever opens it.
         if (legend && hasCustomLegend(legend)) {
             this.setState({ legendOpen: true });
@@ -466,8 +472,10 @@ export class MapData extends Component<MapDataProps, MapDataState> {
         this.searchTimer = setTimeout(() => this.setState({ searchQuery: text }), SEARCH_DEBOUNCE_MS);
     };
 
+    // Back in the search field: the result list takes the legend's place below the bar.
     private readonly showSearchResults = (): void => {
         this.setState({ searchResultsVisible: true });
+        this.closeLegend();
     };
 
     // The search key shows every match on the map.
@@ -842,7 +850,8 @@ export class MapData extends Component<MapDataProps, MapDataState> {
         const legendEntries = legend && !customLegend ? this.getLegendEntries() : [];
         const buttons: ReactElement[] = [];
 
-        if (search && layers.some(layer => layer.searchText)) {
+        // While searching, the search bar takes the search button's place.
+        if (search && !searchOpen && layers.some(layer => layer.searchText)) {
             buttons.push(
                 this.renderMapButton("search", "Search markers", this.openSearch, <SearchIcon color={buttonColor} />)
             );
@@ -886,28 +895,32 @@ export class MapData extends Component<MapDataProps, MapDataState> {
                     const right = (insets?.right ?? 0) + BUTTON_MARGIN;
                     const left = (insets?.left ?? 0) + BUTTON_MARGIN;
 
-                    if (searchOpen && search) {
-                        return (
-                            <SearchPanel
-                                // Leaves the close button uncovered.
-                                style={{ top, right, left: left + (this.props.onClose ? BUTTON_SIZE + 8 : 0) }}
-                                value={this.state.searchInput}
-                                placeholder={search.placeholder}
-                                noResults={search.noResults}
-                                results={this.getSearchResults()}
-                                showResults={this.state.searchResultsVisible}
-                                onChangeText={this.changeSearchText}
-                                onFocus={this.showSearchResults}
-                                onSubmit={this.submitSearch}
-                                onClose={this.closeSearch}
-                                onSelect={this.selectSearchResult}
-                                buttonColor={buttonColor}
-                            />
-                        );
-                    }
+                    const searching = searchOpen && !!search;
+                    const sideOffset = BUTTON_SIZE + 8;
 
                     return (
                         <>
+                            {searching && (
+                                <SearchPanel
+                                    // Sits between the close button and the button column, leaving both uncovered.
+                                    style={{
+                                        top,
+                                        left: left + (this.props.onClose ? sideOffset : 0),
+                                        right: right + (buttons.length > 0 ? sideOffset : 0)
+                                    }}
+                                    value={this.state.searchInput}
+                                    placeholder={search.placeholder}
+                                    noResults={search.noResults}
+                                    results={this.getSearchResults()}
+                                    showResults={this.state.searchResultsVisible}
+                                    onChangeText={this.changeSearchText}
+                                    onFocus={this.showSearchResults}
+                                    onSubmit={this.submitSearch}
+                                    onClose={this.closeSearch}
+                                    onSelect={this.selectSearchResult}
+                                    buttonColor={buttonColor}
+                                />
+                            )}
                             {buttons.length > 0 && (
                                 <View pointerEvents="box-none" style={[styles.buttonColumn, { top, right }]}>
                                     {buttons}
@@ -915,7 +928,11 @@ export class MapData extends Component<MapDataProps, MapDataState> {
                             )}
                             {legend && legendOpen && legendEntries.length > 0 && (
                                 <Legend
-                                    style={{ top, right: right + BUTTON_SIZE + 8 }}
+                                    // Below the search bar while searching, beside the buttons otherwise.
+                                    style={{
+                                        top: searching ? top + SEARCH_BAR_HEIGHT + 8 : top,
+                                        right: right + sideOffset
+                                    }}
                                     title={legend.title}
                                     entries={legendEntries}
                                     showCounts={legend.showCounts}

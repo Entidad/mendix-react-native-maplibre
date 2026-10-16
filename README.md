@@ -99,7 +99,7 @@ The Native Template already requests the location permissions (`ACCESS_FINE_LOCA
   4. Optionally set each layer's **Marker count** to an Integer attribute and show it next to the switch
 - **Generated**: when both drop zones are empty, a small panel beside the buttons lists each layer with a **Legend label**: its icon, label and marker count. Tapping a layer hides or shows its markers
 
-**Search.** Typing filters the markers of searchable layers; matching ignores case and accents, and every word must appear. The result list jumps to a marker and opens its popup; the search key zooms the map to show all matches. Closing the search shows all markers again.
+**Search.** Typing filters the markers of searchable layers; matching ignores case and accents, and every word must appear. The result list jumps to a marker and opens its popup; the search key zooms the map to show all matches. Closing the search shows all markers again. While searching, the search bar sits between the close button and the button column, so the legend, clustering and location buttons stay available.
 
 ### Marker icons
 - Images in an image collection are bundled with the app. Size them close to the size they are shown at: for **Icon size** `32`, a 48×64 PNG (about 1 KB) looks sharp
