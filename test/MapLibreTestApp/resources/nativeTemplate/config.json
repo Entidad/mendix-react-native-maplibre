@@ -95,6 +95,13 @@
             "name": "android.permission.SYSTEM_ALERT_WINDOW",
             "platform": "android",
             "required": true
+        },
+        {
+            "title": "Motion Usage",
+            "name": "NSMotionUsageDescription",
+            "purpose": "To use that feature, the app needs to access your motion.",
+            "platform": "ios",
+            "required": false
         }
     ],
     "capabilities": {
@@ -139,8 +146,8 @@
             "enabled": false
         }
     },
-    "appVersion": "2.0.0",
-    "buildNumber": 10,
+    "appVersion": "3.0.0",
+    "buildNumber": 11,
     "runtimeUrl": "http://localhost:8080",
     "hermesEnabled": true,
     "cookieEncryptionEnabled": false
