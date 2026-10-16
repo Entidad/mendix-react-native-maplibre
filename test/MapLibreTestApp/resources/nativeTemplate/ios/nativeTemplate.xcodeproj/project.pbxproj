@@ -31,6 +31,7 @@
 		6E2A5EF82EE2F17800FB5359 /* Info-dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E2A5EF62EE2F17800FB5359 /* Info-dev.plist */; };
 		6E2A5F012EE3A00000FB5359 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2A5F002EE3A00000FB5359 /* SceneDelegate.swift */; };
 		6E2A5F032EE3A00000FB5359 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2A5F022EE3A00000FB5359 /* SceneDelegate.swift */; };
+		98DA3180ADA749079FCD0EBE /* native_dependencies.json in Resources */ = {isa = PBXBuildFile; fileRef = C205A0CD7DE0423ABDCE351C /* native_dependencies.json */; };
 		9DF4091425A46A56E2A9A405 /* libPods-nativeTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F36AC2CCD37CCD4E7B1BB8 /* libPods-nativeTemplate.a */; };
 		9E9B12F82EAB8BA500714B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9B12F62EAB8BA500714B41 /* AppDelegate.swift */; };
 		9E9B12FA2EAB8C2800714B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9B12F92EAB8C2800714B41 /* AppDelegate.swift */; };
@@ -40,10 +41,9 @@
 		9E9B13042EAB8EB700714B41 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9B13022EAB8EB700714B41 /* SplashScreenPresenter.swift */; };
 		B28D6DAD97033B55832E5853 /* libPods-dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11502903429AC2E6E69E6482 /* libPods-dev.a */; };
 		C5A009082BE291FE00F10EC1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C5A009072BE291FE00F10EC1 /* PrivacyInfo.xcprivacy */; };
+		E911933465DF494DBAB5EC34 /* native_dependencies.json in Resources */ = {isa = PBXBuildFile; fileRef = C205A0CD7DE0423ABDCE351C /* native_dependencies.json */; };
 		EB55620C22E0755000E19C26 /* glyphicons-halflings-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB55620B22E0755000E19C26 /* glyphicons-halflings-regular.ttf */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
-		98DA3180ADA749079FCD0EBE /* native_dependencies.json in Resources */ = {isa = PBXBuildFile; fileRef = C205A0CD7DE0423ABDCE351C /* native_dependencies.json */; };
-		E911933465DF494DBAB5EC34 /* native_dependencies.json in Resources */ = {isa = PBXBuildFile; fileRef = C205A0CD7DE0423ABDCE351C /* native_dependencies.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +85,7 @@
 		9E9B12FF2EAB8D2600714B41 /* MendixAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendixAppDelegate.swift; sourceTree = "<group>"; };
 		9E9B13022EAB8EB700714B41 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		BFF2B70938A7895ADAB4177A /* Pods-dev.releasedevapp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dev.releasedevapp.xcconfig"; path = "Target Support Files/Pods-dev/Pods-dev.releasedevapp.xcconfig"; sourceTree = "<group>"; };
+		C205A0CD7DE0423ABDCE351C /* native_dependencies.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = native_dependencies.json; path = native_dependencies.json; sourceTree = "<group>"; };
 		C5A009072BE291FE00F10EC1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CBB85EF00DCBBB622B4C25E7 /* Pods-nativeTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeTemplate.release.xcconfig"; path = "Target Support Files/Pods-nativeTemplate/Pods-nativeTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		DBB22F41E3AF5D95F9759402 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		EBC80A6022DF4205007E5F3D /* config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = config.debug.xcconfig; sourceTree = "<group>"; };
 		EBC80A6122DF42DF007E5F3D /* config.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = config.release.xcconfig; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		C205A0CD7DE0423ABDCE351C /* native_dependencies.json */ = {isa = PBXFileReference; name = "native_dependencies.json"; path = "native_dependencies.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -288,6 +288,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				E76B33B54A5C7944CC054730 /* [CP] Copy Pods Resources */,
 				09CE09EA5F32265E244BA13B /* [CP] Embed Pods Frameworks */,
+				5C7DE62B2F53C51EAB5BC5B3 /* [MapLibre React Native] Remove MapLibre.xcframework-ios.signature */,
 			);
 			buildRules = (
 			);
@@ -297,6 +298,9 @@
 				9E9B12FB2EAB8C9300714B41 /* Extensions */,
 			);
 			name = nativeTemplate;
+			packageProductDependencies = (
+				E5E420C42E106046883141E3 /* MapLibre */,
+			);
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* nativeTemplate.app */;
 			productType = "com.apple.product-type.application";
@@ -311,6 +315,7 @@
 				1A0B3A902397DA2300388BF7 /* Resources */,
 				5248E8502EF2589755F92828 /* [CP] Copy Pods Resources */,
 				3CD90793CF976C23D5DC455D /* [CP] Embed Pods Frameworks */,
+				6F27DB262BF53D3D526BAFBE /* [MapLibre React Native] Remove MapLibre.xcframework-ios.signature */,
 			);
 			buildRules = (
 			);
@@ -320,6 +325,9 @@
 				9E9B12FB2EAB8C9300714B41 /* Extensions */,
 			);
 			name = dev;
+			packageProductDependencies = (
+				BF98E17E056DEBFE3F32002A /* MapLibre */,
+			);
 			productName = Dev;
 			productReference = 1A0B3A922397DA2300388BF7 /* NativeTemplateDev.app */;
 			productType = "com.apple.product-type.application";
@@ -352,6 +360,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				81CDA6B2B926449BB25BBD06 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -472,6 +483,44 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dev/Pods-dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5C7DE62B2F53C51EAB5BC5B3 /* [MapLibre React Native] Remove MapLibre.xcframework-ios.signature */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[MapLibre React Native] Remove MapLibre.xcframework-ios.signature";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf \"$CONFIGURATION_BUILD_DIR/MapLibre.xcframework-ios.signature\"";
+		};
+		6F27DB262BF53D3D526BAFBE /* [MapLibre React Native] Remove MapLibre.xcframework-ios.signature */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[MapLibre React Native] Remove MapLibre.xcframework-ios.signature";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf \"$CONFIGURATION_BUILD_DIR/MapLibre.xcframework-ios.signature\"";
 		};
 		9424FB93980FFC0182F8FB87 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -631,7 +680,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "nativeTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -709,7 +758,7 @@
 				SWIFT_INCLUDE_PATHS = "$(inherited) ${PROJECT_DIR}";
 				SWIFT_OBJC_BRIDGING_HEADER = "nativeTemplate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -759,7 +808,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "nativeTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -808,7 +857,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "nativeTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -878,7 +927,7 @@
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -957,7 +1006,7 @@
 				SWIFT_INCLUDE_PATHS = "$(inherited) ${PROJECT_DIR}";
 				SWIFT_OBJC_BRIDGING_HEADER = "nativeTemplate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = ReleaseDevApp;
@@ -1011,7 +1060,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "nativeTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = ReleaseDevApp;
 		};
@@ -1087,7 +1136,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 				USE_HERMES = true;
 			};
 			name = Debug;
@@ -1158,7 +1207,7 @@
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
-				TARGETED_DEVICE_FAMILY = "1";
+				TARGETED_DEVICE_FAMILY = 1;
 				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1198,6 +1247,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		81CDA6B2B926449BB25BBD06 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maplibre/maplibre-gl-native-distribution";
+			requirement = {
+				kind = exactVersion;
+				version = 6.26.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF98E17E056DEBFE3F32002A /* MapLibre */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81CDA6B2B926449BB25BBD06 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */;
+			productName = MapLibre;
+		};
+		E5E420C42E106046883141E3 /* MapLibre */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81CDA6B2B926449BB25BBD06 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */;
+			productName = MapLibre;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
