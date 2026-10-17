@@ -130,8 +130,8 @@ Submit issues [here](https://github.com/Entidad/mendix-react-native-maplibre/iss
 If you are interested in contributing improvements or additional mapping capabilities, submit a pull request (PR)    
 
 ## Dependencies
-1. Mendix Studio Pro `11.12.1` or newer (bundles Node `24`, React Native `0.84.1` / React `19`)
-2. Mendix Native Template `v19.1.2`
+1. Mendix Studio Pro `11.12.6` or newer (bundles Node `24`, React Native `0.84.1` / React `19`)
+2. Mendix Native Template `v19.1.7`
 3. [MapLibre React Native library](https://github.com/maplibre/maplibre-react-native) `v11.3.6`
 4. [MapLibre](https://maplibre.org/) open-source mapping libraries
 5. [MapLibre React Native docs](https://maplibre.org/maplibre-react-native/)
